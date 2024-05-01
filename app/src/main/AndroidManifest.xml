@@ -13,6 +13,78 @@
         android:theme="@style/Theme.ProjectApp"
         tools:targetApi="31">
         <activity
+            android:name=".MainActivityBallPlay"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivitySeasonsPlay"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityPicturesPlay"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityMultiplicationPlay"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityDirectionsPlay"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityABCPlay"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity321Play"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity123Play"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityMonthsPlay"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityDaysPlay"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityDigitalClockPlay"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityAnalogClockPlay"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivitySeasons"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityBall"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityPictures"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityMultiplication"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityDirections"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityABC"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity321"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity123"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityMonths"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityDays"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityAnalogClock"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityDigitalClock"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity3"
             android:exported="false" />
         <activity

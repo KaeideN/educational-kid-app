@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new  Intent(MainActivity.this,MainActivity2.class);
+                Intent intent = new  Intent(MainActivity.this,MainActivityAnalogClock.class);
                 startActivity(intent);
 
             }
@@ -40,11 +40,91 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,MainActivity3.class);
+                Intent intent = new Intent(MainActivity.this,MainActivityDigitalClock.class);
                 startActivity(intent);
 
             }
         });
+        button3 =findViewById(R.id.button3);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =  new Intent(MainActivity.this,MainActivityDays.class);
+                startActivity(intent);
+            }
+        });
+        button4 =findViewById(R.id.button4);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (MainActivity.this,MainActivityMonths.class);
+                startActivity(intent);
+            }
+        });
+        button5 =findViewById(R.id.button5);
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (MainActivity.this,MainActivity123.class);
+                startActivity(intent);
+            }
+        });
 
+        button6 =findViewById(R.id.button6);
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (MainActivity.this,MainActivity321.class);
+                startActivity(intent);
+            }
+        });
+        button7 =findViewById(R.id.button7);
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (MainActivity.this,MainActivityABC.class);
+                startActivity(intent);
+            }
+        });
+        button8 =findViewById(R.id.button8);
+        button8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (MainActivity.this,MainActivityDirections.class);
+                startActivity(intent);
+            }
+        });
+        button9 =findViewById(R.id.button9);
+        button9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (MainActivity.this,MainActivityMultiplication.class);
+                startActivity(intent);
+            }
+        });
+        button10 =findViewById(R.id.button10);
+        button10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (MainActivity.this,MainActivityPictures.class);
+                startActivity(intent);
+            }
+        });
+        button11 =findViewById(R.id.button11);
+        button11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (MainActivity.this,MainActivityBall.class);
+                startActivity(intent);
+            }
+        });
+        button12 =findViewById(R.id.button12);
+        button12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (MainActivity.this,MainActivitySeasons.class);
+                startActivity(intent);
+            }
+        });
     }
 }
