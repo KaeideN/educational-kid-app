@@ -13,7 +13,7 @@
         android:theme="@style/Theme.ProjectApp"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivityBallPlay"
+            android:name=".RedBallPlay"
             android:exported="false" />
         <activity
             android:name=".MainActivitySeasonsPlay"
@@ -52,7 +52,7 @@
             android:name=".MainActivitySeasons"
             android:exported="false" />
         <activity
-            android:name=".MainActivityBall"
+            android:name=".RedBall"
             android:exported="false" />
         <activity
             android:name=".MainActivityPictures"
@@ -85,10 +85,16 @@
             android:name=".MainActivityDigitalClock"
             android:exported="false" />
         <activity
-            android:name=".MainActivity3"
-            android:exported="false" />
+            android:name=".Login"
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
-            android:name=".MainActivity2"
+            android:name=".Register"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

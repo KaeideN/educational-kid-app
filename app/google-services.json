@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "666703527094",
+    "project_id": "educational-kid-app-c6026",
+    "storage_bucket": "educational-kid-app-c6026.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:666703527094:android:278c165551a5e25cd33a17",
+        "android_client_info": {
+          "package_name": "com.example.projectapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfLGVcOOGtZNKt_fxByVLEDolg1eD54Ck"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

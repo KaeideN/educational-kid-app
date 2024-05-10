@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@drawable/backgrounden"
+    android:background="@drawable/backgroundloginregister"
     tools:context=".Register">
 
     <com.google.android.material.textfield.TextInputLayout

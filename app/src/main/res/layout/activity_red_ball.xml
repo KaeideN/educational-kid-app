@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RedBall"
-    android:background="@drawable/image1">
+    android:background="@drawable/background">
 
     <Button
         android:layout_width="wrap_content"
