@@ -23,7 +23,7 @@ public class MainActivityMultiplication extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        buttonPlay.findViewById(R.id.buttonPlay);
+        buttonPlay=findViewById(R.id.buttonPlay);
         buttonPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

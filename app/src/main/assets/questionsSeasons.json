@@ -1,7 +1,60 @@
 {
     "questionsSeasons":[
-            {
-                "question":
-        }
-        ]
+      {
+        "question":"What season comes after spring ?",
+        "answer1": "A) Summer",
+        "answer2": "B) Fall",
+        "answer3": "C) Winter",
+        "answer4": "D) Autumn",
+        "correct": "A) Summer"
+      },
+      {
+        "question":"Which season is known for its colorful leaves falling from trees ?",
+        "answer1": "A) Spring",
+        "answer2": "B) Summer",
+        "answer3": "C) Fall",
+        "answer4": "D) Winter",
+        "correct": "C) Fall"
+      },
+      {
+        "question":"What activity can you do in winter but not in summer ?",
+        "answer1": "A) Swimming",
+        "answer2": "B) Building a snowman",
+        "answer3": "C) Planting flowers",
+        "answer4": "D) Going to the beach",
+        "correct": "B) Building a snowman"
+      },
+      {
+        "question":"Which season is usually the hottest ?",
+        "answer1": "A) Winter",
+        "answer2": "B) Summer",
+        "answer3": "C) Fall",
+        "answer4": "D) Spring",
+        "correct": "B) Summer"
+      },
+      {
+        "question":"During which season do flowers start to bloom ?",
+        "answer1": "A) Winter",
+        "answer2": "B) Summer",
+        "answer3": "C) Fall",
+        "answer4": "D) Spring",
+        "correct": "D) Spring"
+      },
+      {
+        "question":"What season comes before winter ?",
+        "answer1": "A) Summer",
+        "answer2": "B) Fall",
+        "answer3": "C) Spring",
+        "answer4": "D) Autumn",
+        "correct": "B) Fall"
+      },
+      {
+        "questions":"Which season is known for its longer days and shorter nights ?",
+        "answer1": "A) Winter",
+        "answer2": "B) Fall",
+        "answer3": "C) Summer",
+        "answer4": "D) Spring",
+        "correct": "C) Summer"
+      }
+    ]
 }

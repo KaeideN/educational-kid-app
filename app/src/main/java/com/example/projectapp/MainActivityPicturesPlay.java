@@ -23,7 +23,7 @@ public class MainActivityPicturesPlay extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        buttonHome.findViewById(R.id.buttonHome);
+        buttonHome=findViewById(R.id.buttonHome);
         buttonHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

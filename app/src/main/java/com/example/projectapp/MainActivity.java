@@ -23,19 +23,17 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        button1=findViewById(R.id.button1);
-
+        button1 = findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent intent = new  Intent(MainActivity.this,MainActivityAnalogClock.class);
                 startActivity(intent);
-
             }
         });
 
-        button2 =findViewById(R.id.button2);
+        button2 = findViewById(R.id.button2);
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        button3 =findViewById(R.id.button3);
+
+        button3 = findViewById(R.id.button3);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
