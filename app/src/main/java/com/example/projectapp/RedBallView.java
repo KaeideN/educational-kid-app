@@ -47,8 +47,8 @@ public class RedBallView extends View {
     }
 
     private void resetBallPosition() {
-        ballX = BALL_RADIUS; // Start from the left corner
-        ballY = BALL_RADIUS; // Start from the top corner
+        ballX = BALL_RADIUS+80; // Start from the left corner
+        ballY = BALL_RADIUS+30; // Start from the top corner
         ballSpeedX = BALL_SPEED; // Start moving to the right
         ballSpeedY = 0; // No vertical movement initially
     }
@@ -59,14 +59,14 @@ public class RedBallView extends View {
 
         // Check if the ball reaches the right corner or left corner
         if (ballX + BALL_RADIUS >= screenWidth || ballX - BALL_RADIUS <= 0) {
-            ballY += BALL_RADIUS * 2; // Move down
-            ballX = ballX <= BALL_RADIUS ? screenWidth - BALL_RADIUS : BALL_RADIUS; // Teleport to the next line
+            ballY += 113.7; // Move down
+            ballX =BALL_RADIUS+80 ; // Teleport to the next line
         }
 
         // Check if the ball reaches the bottom edge
-        if (ballY + BALL_RADIUS >= screenHeight) {
-            ballY = BALL_RADIUS; // Teleport to the top-left corner (starting corner)
-            ballX = BALL_RADIUS; // Start from the left corner
+        if (ballY + BALL_RADIUS >= screenHeight-200) {
+            ballY = BALL_RADIUS+30; // Teleport to the top-left corner (starting corner)
+            ballX = BALL_RADIUS+80; // Start from the left corner
         }
 
     }
