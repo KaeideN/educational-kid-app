@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Project App</string>
+    <string name="hour">Hour</string>
+    <string name="minute">MINUTE</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="play">PLAY</string>
 </resources>
