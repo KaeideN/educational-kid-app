@@ -13,6 +13,10 @@
         android:theme="@style/Theme.ProjectApp"
         tools:targetApi="31">
         <activity
+            android:name=".ResultActivitySeasons"
+            android:exported="false"
+            android:theme="@style/Theme.ProjectApp" />
+        <activity
             android:name=".RedBallPlay"
             android:exported="false" />
         <activity
@@ -87,11 +91,11 @@
         <activity
             android:name=".Login"
             android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".Register"

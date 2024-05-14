@@ -1,74 +1,236 @@
 package com.example.projectapp;
 
-import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
+import android.content.Intent;
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import java.util.List;
-import com.example.projectapp.R;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Collections;
+
 
 public class MainActivitySeasonsPlay extends AppCompatActivity {
 
-    private TextView textViewQuestion;
-    private Button buttonOption1, buttonOption2, buttonOption3, buttonOption4;
-    private int correctOption = 1; // Change this to the correct option number
+        TextView quizText,aans,bans,cans,dans;
+        List<QuesitionsItem> quesitionsItems;
+        int currentQuestions =0 ,wrong=0,correct=0;
+        Intent intent;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_seasons_play);
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            EdgeToEdge.enable(this);
+            setContentView(R.layout.activity_main_seasons_play);
+            ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+                Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+                v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+                return insets;
+            });
 
-        textViewQuestion = findViewById(R.id.textViewQuestion);
-        buttonOption1 = findViewById(R.id.buttonOption1);
-        buttonOption2 = findViewById(R.id.buttonOption2);
-        buttonOption3 = findViewById(R.id.buttonOption3);
-        buttonOption4 = findViewById(R.id.buttonOption4);
+            quizText=findViewById(R.id.quizText);
+            aans=findViewById(R.id.aanswer);
+            bans=findViewById(R.id.banswer);
+            cans=findViewById(R.id.canswer);
+            dans=findViewById(R.id.danswer);
 
-        // Set question and options
-        textViewQuestion.setText("What season comes after spring ?");
-        buttonOption1.setText("A) Summer");
-        buttonOption2.setText("B) Fall");
-        buttonOption3.setText("C) Winter");
-        buttonOption4.setText("D) Autumn");
+            loadAllQuestions();
+            Collections.shuffle(quesitionsItems);
+            setQuestionScreen(currentQuestions);
 
-        // Set click listeners for options
-        buttonOption1.setOnClickListener(v -> checkAnswer(buttonOption1, 1));
-        buttonOption2.setOnClickListener(v -> checkAnswer(buttonOption2, 2));
-        buttonOption3.setOnClickListener(v -> checkAnswer(buttonOption3, 3));
-        buttonOption4.setOnClickListener(v -> checkAnswer(buttonOption4, 4));
-    }
+            aans.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(quesitionsItems.get(currentQuestions).getAnswer1().equals(quesitionsItems.get(currentQuestions).getCorrect())){
+                        correct++;
+                        aans.setBackgroundResource(R.drawable.right_answer_bg);
+                        aans.setTextColor(getResources().getColor(R.color.white));
+                    }else {
+                        wrong++;
+                        aans.setBackgroundResource(R.drawable.wrong_answer);
+                        aans.setTextColor(getResources().getColor(R.color.white));
+                    }
 
-    private void checkAnswer(Button selectedButton, int selectedOption) {
-        if (selectedOption == correctOption) {
-            // Correct answer
-            selectedButton.setBackgroundColor(Color.GREEN);
-            // You can perform additional actions here, such as updating score
-        } else {
-            // Incorrect answer
-            selectedButton.setBackgroundColor(Color.RED);
-            // Find the correct option button and highlight it
-            switch (correctOption) {
-                case 1:
-                    buttonOption1.setBackgroundColor(Color.GREEN);
-                    break;
-                case 2:
-                    buttonOption2.setBackgroundColor(Color.GREEN);
-                    break;
-                case 3:
-                    buttonOption3.setBackgroundColor(Color.GREEN);
-                    break;
-                case 4:
-                    buttonOption4.setBackgroundColor(Color.GREEN);
-                    break;
+                    if(currentQuestions<quesitionsItems.size()-1){
+                        Handler handler = new  Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                currentQuestions++;
+                                setQuestionScreen(currentQuestions);
+                                aans.setBackgroundResource(R.drawable.answers_background);
+                                aans.setTextColor(getResources().getColor(R.color.white));
+                            }
+                        },700);
+                    }else {
+                        Intent intent = new Intent(MainActivitySeasonsPlay.this,ResultActivitySeasons.class);
+                        intent.putExtra("correct",correct);
+                        intent.putExtra("wrong",wrong);
+                        startActivity(intent);
+                        finish();
+                    }
+                }
+            });
+
+
+            bans.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(quesitionsItems.get(currentQuestions).getAnswer2().equals(quesitionsItems.get(currentQuestions).getCorrect())){
+                        correct++;
+                        bans.setBackgroundResource(R.drawable.right_answer_bg);
+                        //bans.setTextColor(getResources().getColor(R.color.white));
+                    }else {
+                        wrong++;
+                        bans.setBackgroundResource(R.drawable.wrong_answer);
+                        bans.setTextColor(getResources().getColor(R.color.white));
+                    }
+
+                    if(currentQuestions<quesitionsItems.size()-1){
+                        Handler handler = new  Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                currentQuestions++;
+                                setQuestionScreen(currentQuestions);
+                                bans.setBackgroundResource(R.drawable.answers_background);
+                                bans.setTextColor(getResources().getColor(R.color.white));
+                            }
+                        },700);
+                    }else {
+                        Intent intent = new Intent(MainActivitySeasonsPlay.this,ResultActivitySeasons.class);
+                        intent.putExtra("correct",correct);
+                        intent.putExtra("wrong",wrong);
+                        startActivity(intent);
+                        finish();
+                    }
+                }
+            });
+            cans.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(quesitionsItems.get(currentQuestions).getAnswer3().equals(quesitionsItems.get(currentQuestions).getCorrect())){
+                        correct++;
+                        cans.setBackgroundResource(R.drawable.right_answer_bg);
+                        //cans.setTextColor(getResources().getColor(R.color.white));
+                    }else {
+                        wrong++;
+                        cans.setBackgroundResource(R.drawable.wrong_answer);
+                        cans.setTextColor(getResources().getColor(R.color.white));
+                    }
+
+                    if(currentQuestions<quesitionsItems.size()-1){
+                        Handler handler = new  Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                currentQuestions++;
+                                setQuestionScreen(currentQuestions);
+                                cans.setBackgroundResource(R.drawable.answers_background);;
+                                cans.setTextColor(getResources().getColor(R.color.white));
+                            }
+                        },700);
+                    }else {
+                        Intent intent = new Intent(MainActivitySeasonsPlay.this,ResultActivitySeasons.class);
+                        intent.putExtra("correct",correct);
+                        intent.putExtra("wrong",wrong);
+                        startActivity(intent);
+                        finish();
+                    }
+                }
+            });
+            dans.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(quesitionsItems.get(currentQuestions).getAnswer4().equals(quesitionsItems.get(currentQuestions).getCorrect())){
+                        correct++;
+                        dans.setBackgroundResource(R.drawable.right_answer_bg);
+                        dans.setTextColor(getResources().getColor(R.color.white));
+                    }else {
+                        wrong++;
+                        dans.setBackgroundResource(R.drawable.wrong_answer);
+                        dans.setTextColor(getResources().getColor(R.color.white));
+                    }
+
+                    if(currentQuestions<quesitionsItems.size()-1){
+                        Handler handler = new  Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                currentQuestions++;
+                                setQuestionScreen(currentQuestions);
+                                dans.setBackgroundResource(R.drawable.answers_background);;
+                                dans.setTextColor(getResources().getColor(R.color.white));
+                            }
+                        },700);
+                    }else {
+                        Intent intent = new Intent(MainActivitySeasonsPlay.this,ResultActivitySeasons.class);
+                        intent.putExtra("correct",correct);
+                        intent.putExtra("wrong",wrong);
+                        startActivity(intent);
+                        finish();
+                    }
+                }
+            });
+        }
+        private void setQuestionScreen(int currentQuestions) {
+            quizText.setText(quesitionsItems.get(currentQuestions).getQuestions());
+            aans.setText(quesitionsItems.get(currentQuestions).getAnswer1());
+            aans.setTextColor(getResources().getColor(R.color.white));
+            bans.setText(quesitionsItems.get(currentQuestions).getAnswer2());
+            bans.setTextColor(getResources().getColor(R.color.white));
+            cans.setText(quesitionsItems.get(currentQuestions).getAnswer3());
+            cans.setTextColor(getResources().getColor(R.color.white));
+            dans.setText(quesitionsItems.get(currentQuestions).getAnswer4());
+            dans.setTextColor(getResources().getColor(R.color.white));
+        }
+
+        private void loadAllQuestions() {
+            quesitionsItems = new ArrayList<>();
+            String jsonquiz = loadJsonFromAsset("questionsSeasons.json");
+            try{
+                JSONObject jsonObject =  new JSONObject(jsonquiz);
+                JSONArray questions = jsonObject.getJSONArray("questions");
+                for(int i=0;i<questions.length();i++){
+                    JSONObject question = questions.getJSONObject(i);
+
+                    String questionsString = question.getString("question");
+                    String answer1String = question.getString("answer1");
+                    String answer2String = question.getString("answer2");
+                    String answer3String = question.getString("answer3");
+                    String answer4String = question.getString("answer4");
+                    String correctString = question.getString("correct");
+
+                    quesitionsItems.add(new QuesitionsItem(questionsString,answer1String,answer2String,answer3String,answer4String,correctString));
+                }
+            }catch(JSONException e){
+                e.printStackTrace();
             }
         }
-        // Disable all buttons after user has answered
-        buttonOption1.setEnabled(false);
-        buttonOption2.setEnabled(false);
-        buttonOption3.setEnabled(false);
-        buttonOption4.setEnabled(false);
-    }
+
+        private String loadJsonFromAsset(String s) {
+            String json = "";
+            try {
+                InputStream inputStream = getAssets().open(s);
+                int size = inputStream.available();
+                byte[] buffer = new byte[size];
+                inputStream.read(buffer);
+                inputStream.close();
+                json = new String(buffer,"UTF-8");
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+            return json;
+        }
 
 }
