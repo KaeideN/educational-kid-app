@@ -1,6 +1,7 @@
 package com.example.projectapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,7 @@ public class MainActivityAnalogClockPlay extends AppCompatActivity {
     private AnalogClockView analogClockView;
     private EditText timeInputEditText;
     private Button submitButton;
+    private Button backToAnalogClock;
     private TextView questionCountTextView;
     private TextView personalBestTextView;
     private TextView currentScoreTextView;
@@ -36,6 +38,7 @@ public class MainActivityAnalogClockPlay extends AppCompatActivity {
         analogClockView = findViewById(R.id.analogClockView);
         timeInputEditText = findViewById(R.id.timeInputEditText);
         submitButton = findViewById(R.id.submitButton);
+        backToAnalogClock=findViewById(R.id.backToAnalogClock);
         questionCountTextView = findViewById(R.id.questionCountTextView);
         personalBestTextView = findViewById(R.id.personalBestTextView);
         currentScoreTextView = findViewById(R.id.currentScoreTextView);
@@ -167,8 +170,16 @@ public class MainActivityAnalogClockPlay extends AppCompatActivity {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
         submitButton.setVisibility(View.INVISIBLE);
         timeInputEditText.setVisibility(View.INVISIBLE);
+        backToAnalogClock.setVisibility(View.VISIBLE);
         // Reset current score
         currentScore = 0;
+        backToAnalogClock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivityAnalogClockPlay.this,MainActivityAnalogClock.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

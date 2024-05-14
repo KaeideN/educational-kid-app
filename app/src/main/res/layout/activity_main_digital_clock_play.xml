@@ -4,6 +4,15 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:background="@drawable/background">
+    <TextView
+        android:id="@+id/textViewQuestionCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Question: 1"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"/>
 
     <ImageView
         android:id="@+id/imageClock"
@@ -19,8 +28,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true">
 
         <Button
             android:id="@+id/buttonOption1"
@@ -42,4 +51,36 @@
             android:layout_height="wrap_content"
             android:text="Option 3"/>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score: 0"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="380dp"/>
+
+    <TextView
+        android:id="@+id/textViewBest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginTop="350dp"
+        android:textSize="20sp"
+        android:text="Best: 0"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/backToDigitalClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginVertical="450dp"
+        android:text="Back" />
+
+
 </RelativeLayout>

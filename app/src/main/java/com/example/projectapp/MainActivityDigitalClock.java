@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivityDigitalClock extends AppCompatActivity {
     Button buttonPlay;
+    Button backToMainFromDigital;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,13 @@ public class MainActivityDigitalClock extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        backToMainFromDigital=findViewById(R.id.backToMainFromDigital);
+        backToMainFromDigital.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivityDigitalClock.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
