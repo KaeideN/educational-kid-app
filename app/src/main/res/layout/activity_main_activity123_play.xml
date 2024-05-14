@@ -1,93 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- activity_main.xml -->
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context=".MainActivity123Play"
     android:background="@drawable/background">
 
-    <!-- Kartları tutacak GridLayout -->
-    <GridLayout
-        android:id="@+id/gridLayoutCards"
-        android:layout_width="310dp"
-        android:layout_height="192dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:alignmentMode="alignMargins"
-        android:columnCount="3"
-        android:columnOrderPreserved="false"
-        android:orientation="horizontal"
-        android:rowCount="3">
-
-        <!-- Kartlar dinamik olarak buraya eklenecek -->
-
-        <Button
-            android:id="@+id/buttonCard1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1" />
-
-        <Button
-            android:id="@+id/buttonCard2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2" />
-
-        <Button
-            android:id="@+id/buttonCard3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="3" />
-
-        <Button
-            android:id="@+id/buttonCard4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="4" />
-
-        <Button
-            android:id="@+id/buttonCard5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="5" />
-
-        <Button
-            android:id="@+id/buttonCard6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="6" />
-
-        <Button
-            android:id="@+id/buttonCard7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="7" />
-
-        <Button
-            android:id="@+id/buttonCard8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="8" />
-
-        <Button
-            android:id="@+id/buttonCard9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="9" />
-    </GridLayout>
-
-    <!-- Sayıları gösterecek TextView -->
     <TextView
-        android:id="@+id/textViewNumbers"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/gridLayoutCards"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:textSize="24sp"
-        android:textColor="@android:color/black"/>
+        android:layout_marginTop="100dp"
+        android:textSize="23sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/highestScoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Highest Score: 0"
+        android:textColor="#F44336"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="247dp"
+        android:layout_marginRight="25dp"
+        android:columnCount="3"
+        android:padding="10dp"
+        android:rowCount="3">
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:onClick="onNumberButtonClick" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:onClick="onNumberButtonClick" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="3"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:onClick="onNumberButtonClick" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="4"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:onClick="onNumberButtonClick" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="0dp"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_height="wrap_content"
+            android:text="5"
+            android:onClick="onNumberButtonClick" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="0dp"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_height="wrap_content"
+            android:text="6"
+            android:onClick="onNumberButtonClick" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="0dp"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_height="wrap_content"
+            android:text="7"
+            android:onClick="onNumberButtonClick" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="0dp"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_height="wrap_content"
+            android:text="8"
+            android:onClick="onNumberButtonClick" />
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="0dp"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_height="wrap_content"
+            android:text="9"
+            android:onClick="onNumberButtonClick" />
+
+    </GridLayout>
 
 </RelativeLayout>
+
