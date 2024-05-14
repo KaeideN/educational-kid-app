@@ -14,7 +14,7 @@
         android:layout_width="83dp"
         android:layout_height="52dp"
         android:layout_marginBottom="28dp"
-        android:text="@string/play"
+        android:text="Play"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -53,7 +53,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginBottom="240dp"
         android:background="@android:color/transparent"
-        android:text="@string/minus"
+        android:text="-"
         android:textColor="@color/black"
         android:textSize="70sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -66,7 +66,7 @@
         android:layout_marginStart="98dp"
         android:layout_marginBottom="240dp"
         android:background="@android:color/transparent"
-        android:text="@string/plus"
+        android:text="+"
         android:textColor="@color/black"
         android:textSize="70sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -79,7 +79,7 @@
         android:layout_marginEnd="98dp"
         android:layout_marginBottom="240dp"
         android:background="@android:color/transparent"
-        android:text="@string/minus"
+        android:text="-"
         android:textColor="@color/black"
         android:textSize="70sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -92,7 +92,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="240dp"
         android:background="@android:color/transparent"
-        android:text="@string/plus"
+        android:text="+"
         android:textColor="@color/black"
         android:textSize="70sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -143,6 +143,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
+    <Button
+        android:id="@+id/backToMainFromAnalog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonPlay"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

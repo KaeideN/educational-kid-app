@@ -12,6 +12,7 @@ public class MainActivityAnalogClock extends AppCompatActivity {
     private Button hourIncreaseButton, hourDecreaseButton, minuteIncreaseButton, minuteDecreaseButton;
     private TextView timeTextView;
     private Button buttonPlay;
+    private Button backToMainFromAnalog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +71,14 @@ public class MainActivityAnalogClock extends AppCompatActivity {
 
         // Set initial time display
         updateTimeDisplay();
+        backToMainFromAnalog = findViewById(R.id.backToMainFromAnalog);
+        backToMainFromAnalog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivityAnalogClock.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void updateTimeDisplay() {
