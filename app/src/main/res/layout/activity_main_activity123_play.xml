@@ -52,10 +52,10 @@
             android:id="@+id/button2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="2"
-            android:layout_gravity="fill"
             android:layout_columnWeight="1"
-            android:onClick="onNumberButtonClick" />
+            android:layout_gravity="fill"
+            android:onClick="onNumberButtonClick"
+            android:text="2" />
 
         <Button
             android:id="@+id/button3"

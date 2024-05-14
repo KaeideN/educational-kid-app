@@ -1,5 +1,7 @@
 package com.example.projectapp;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,7 +37,7 @@ public class MainActivity123Play extends AppCompatActivity {
     private int currentNumberIndex;
     private int level;
     private int highestScore;
-
+    private int n; // Declare n as a class-level variable
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +46,13 @@ public class MainActivity123Play extends AppCompatActivity {
 
         textView = findViewById(R.id.textView);
         gridLayout = findViewById(R.id.gridLayout);
+        highestScoreTextView = findViewById(R.id.highestScoreTextView); // Initialize highestScoreTextView
+
 
         highestScore = 0;
         numbers = new ArrayList<>();
+        shownNumbers = new ArrayList<>(); // Initialize shownNumbers
+        n = 0; // Initialize n
         for (int i = 1; i <= 9; i++) {
             numbers.add(i);
         }
@@ -54,11 +60,11 @@ public class MainActivity123Play extends AppCompatActivity {
         startGame();
     }
 
-    private int numNumbersToShow; // Her seviyede gösterilecek rakam sayısı
+    private int numNumbersToShow;
 
     private void startGame() {
         level = 1;
-        numNumbersToShow = 2; // İlk seviyede 2 rakam gösterilecek
+        numNumbersToShow = 2;
         currentNumberIndex = 0;
         textView.setText("Level " + level);
 
@@ -74,81 +80,79 @@ public class MainActivity123Play extends AppCompatActivity {
                     int number = numbers.get(currentNumberIndex);
                     textView.setText(String.valueOf(number));
                     currentNumberIndex++;
+                    shownNumbers.add(number); // Add the shown number to shownNumbers
                     showNumbers();
-                    shownNumbers = new ArrayList<>();
-                    shownNumbers.add(number);
-
                 } else {
                     textView.setText("Type the digits from beginning to end.");
                 }
             }
         }, 1500);
     }
-    /*
-    public void onNumberButtonClick(View view) {
-        Button button = (Button) view;
-        int number = Integer.parseInt(button.getText().toString());
-
-        if (number == numbers.get(currentNumberIndex - 1)) {
-            if (currentNumberIndex == numNumbersToShow) { // Tüm rakamlar doğru basıldıysa
-                level++;
-                numNumbersToShow++; // Her seviyede bir ekstra rakam göster
-                currentNumberIndex = 0;
-                textView.setText("Level " + level);
-                Collections.shuffle(numbers);
-                showNumbers();
-            }
-        } else {
-            Toast.makeText(this, "Wrong number! Try again.", Toast.LENGTH_SHORT).show();
-        }
-    }
-     */
 
     public void onNumberButtonClick(View view) {
         Button button = (Button) view;
         int number = Integer.parseInt(button.getText().toString());
-        int n = 0;
+
         // Check if the clicked number matches the current expected number in the sequence
-        if (number == shownNumbers.get(n)  && n<numNumbersToShow) {
+        if (number == shownNumbers.get(n) && n < numNumbersToShow) {
             n++; // Move to the next expected number
 
             // Check if the user has clicked all numbers in the sequence
+            button.setBackgroundColor(Color.GREEN);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    button.setBackgroundColor(R.drawable.button_background);
+                   // button.setBackgroundResource(R.drawable.right_answer_bg);
+
+                }
+            }, 1000);
             if (n == numNumbersToShow) {
                 // Proceed to the next level
                 level++;
-                numNumbersToShow++; // Increase the number of numbers to show in the next level
-                n = 0; // Reset the expected number index
+                updateHighestScore(level);
+                numNumbersToShow++;
+                n = 0; // Reset n
                 textView.setText("Level " + level);
-                Collections.shuffle(numbers); // Shuffle the numbers for the next level
-                showNumbers(); // Show the numbers for the next level
+                Collections.shuffle(numbers);
+                shownNumbers.clear(); // Clear shownNumbers for the next level
+                currentNumberIndex = 0;
+                showNumbers();
             }
         } else {
-            // Wrong button clicked, display a message or take appropriate action
-            Toast.makeText(this, "Wrong button! Try again.", Toast.LENGTH_SHORT).show();
-        }
+            // Change the button color to red for 1 second
+            button.setBackgroundColor(Color.RED);
+            //button.setBackgroundResource(R.drawable.wrong_answer);;
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                   // button.setBackgroundColor(Color.TRANSPARENT);
+                }
+            }, 1000);
+
+            handleWrongButtonClick();
+            }
     }
 
+    private void handleWrongButtonClick() {
+        Intent intent = new Intent(MainActivity123Play.this, ResultActivity123.class);
+        intent.putExtra("userScore", level); // Pass the user's score to the result activity
+        intent.putExtra("highestScore", highestScore); // Pass the highest score to the result activity
+        startActivity(intent);
+        finish();
 
-    private void updateHighestScore() {
-        // Update highest score if the current level is higher
-        if (level > highestScore) {
-            highestScore = level;
-            highestScoreTextView.setText("Highest Score: " + highestScore);
-        }
     }
 
-/*
     private void updateHighestScore(int score) {
-        // Eğer yeni skor, mevcut en yüksek skordan büyükse, Highest Score'u güncelle
+        // Update highest score if the current level is higher
         if (score > highestScore) {
             highestScore = score;
-            highestScoreTextView.setText("Highest Score: " + highestScore);
+            highestScoreTextView.setText("Highest Score: " +highestScore);
         }
     }
-
- */
-
 }
+
 
 
 
