@@ -16,7 +16,7 @@ import com.google.android.material.card.MaterialCardView;
 
 public class ResultActivitySeasons extends AppCompatActivity {
 
-        MaterialCardView home;
+        MaterialCardView home,tryagain;
         TextView correctt,wrongt,resultinfo,resultscore;
         ImageView resultImage;
     @Override
@@ -31,6 +31,7 @@ public class ResultActivitySeasons extends AppCompatActivity {
         });
 
         home = findViewById(R.id.returnHome);
+        tryagain = findViewById(R.id.tryAgainSeasons);
         correctt = findViewById(R.id.correctScore);
         wrongt = findViewById(R.id.wrongScore);
         resultinfo = findViewById(R.id.resultInfo);
@@ -65,7 +66,13 @@ public class ResultActivitySeasons extends AppCompatActivity {
                 finish();
             }
         });
-
+        tryagain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ResultActivitySeasons.this,MainActivitySeasonsPlay.class));
+                finish();
+            }
+        });
     }
 
 }

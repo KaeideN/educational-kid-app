@@ -13,6 +13,12 @@
         android:theme="@style/Theme.ProjectApp"
         tools:targetApi="31">
         <activity
+            android:name=".ResultActivity321"
+            android:exported="false" />
+        <activity
+            android:name=".ResultActivity123"
+            android:exported="false" />
+        <activity
             android:name=".ResultActivitySeasons"
             android:exported="false"
             android:theme="@style/Theme.ProjectApp" />
