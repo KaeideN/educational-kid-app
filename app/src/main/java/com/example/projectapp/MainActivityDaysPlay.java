@@ -94,7 +94,7 @@ public class MainActivityDaysPlay extends AppCompatActivity implements View.OnCl
                 timerHandler.postDelayed(timerRunnable, 0);
             }
         });
-    }
+    } 
 
     @Override
     public void onClick(View view) {

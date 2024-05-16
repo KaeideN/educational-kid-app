@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivityDays extends AppCompatActivity {
     Button buttonDaysPlay;
+    Button buttonBackMainFromDays;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +33,13 @@ public class MainActivityDays extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        
+        buttonBackMainFromDays = findViewById(R.id.buttonBackMainFromDays);
+        buttonBackMainFromDays.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivityDays.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
