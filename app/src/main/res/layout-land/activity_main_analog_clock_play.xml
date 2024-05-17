@@ -11,6 +11,7 @@
         android:id="@+id/analogClockView"
         android:layout_width="305dp"
         android:layout_height="305dp"
+        android:layout_marginRight="200dp"
         android:layout_centerHorizontal="true"/>
 
     <EditText
@@ -18,44 +19,46 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/analogClockView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="-132dp"
         android:hint="Enter the time (HH:MM)"
         android:inputType="text" />
+
+
+    <!-- Additional views can be added here as needed -->
 
     <Button
         android:id="@+id/submitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/timeInputEditText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="590dp"
         android:text="Submit" />
 
-
-
-    <!-- Additional views can be added here as needed -->
     <TextView
         android:id="@+id/personalBestTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/submitButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="200dp"
         android:text="Personal Best: 0"
-        android:textSize="16sp"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/currentScoreTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/personalBestTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="219dp"
         android:text="Current Score: 0"
-        android:textSize="16sp"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/questionCountTextView"
@@ -63,7 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="-83dp"
+        android:layout_marginEnd="100dp"
         android:layout_marginBottom="8dp"
         android:layout_toStartOf="@+id/analogClockView"
         android:gravity="center_horizontal"
@@ -77,10 +80,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:visibility="invisible"
-        android:layout_marginEnd="165dp"
-        android:layout_marginBottom="60dp"
-        android:text="Back" />
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="339dp"
+        android:text="Back"
+        android:visibility="invisible" />
 
 
 </RelativeLayout>

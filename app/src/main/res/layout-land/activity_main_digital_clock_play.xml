@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/background">
+    <TextView
+        android:id="@+id/textViewQuestionCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Question: 1"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"/>
+
+    <ImageView
+        android:id="@+id/imageClock"
+        android:layout_width="511dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:contentDescription="Digital Clock Image"
+        android:src="@drawable/dclock1" />
+
+    <LinearLayout
+        android:id="@+id/layoutOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/buttonOption1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Option 1"/>
+
+        <Button
+            android:id="@+id/buttonOption2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Option 2"/>
+
+        <Button
+            android:id="@+id/buttonOption3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Option 3"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Score: 0"
+        android:textColor="@android:color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textViewBest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="80dp"
+        android:fontFamily="sans-serif-black"
+        android:textSize="20sp"
+        android:text="Best: 0"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/backToDigitalClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginVertical="250dp"
+        android:text="Back" />
+
+
+</RelativeLayout>

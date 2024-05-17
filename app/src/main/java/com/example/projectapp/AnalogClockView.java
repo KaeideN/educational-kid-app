@@ -10,6 +10,7 @@ import android.view.View;
 public class AnalogClockView extends View {
 
     private Paint paint;
+    private Paint numberPaint;
     private int centerX, centerY;
     private int hour = 7;
     private int minute = 0;
@@ -30,6 +31,12 @@ public class AnalogClockView extends View {
         paint.setStrokeWidth(5);
         paint.setStyle(Paint.Style.STROKE);
         paint.setAntiAlias(true);
+
+        numberPaint = new Paint();
+        numberPaint.setColor(Color.BLACK);
+        numberPaint.setTextSize(40);
+        numberPaint.setTextAlign(Paint.Align.CENTER);
+        numberPaint.setAntiAlias(true);
     }
 
     @Override
@@ -46,6 +53,14 @@ public class AnalogClockView extends View {
         int adjustedCenterY = centerY + 10;
         // Draw clock face
         canvas.drawCircle(centerX, adjustedCenterY, radius, paint);
+
+        // Draw clock numbers
+        for (int number = 1; number <= 12; number++) {
+            float angle = (float) Math.toRadians((number - 3) * 30);
+            float x = centerX + (float) (radius * 0.8 * Math.cos(angle));
+            float y = adjustedCenterY + (float) (radius * 0.8 * Math.sin(angle)) + numberPaint.getTextSize() / 3;
+            canvas.drawText(String.valueOf(number), x, y, numberPaint);
+        }
 
         // Draw hour hand
         float hourAngle = (hour % 12 + minute / 60.0f) * 360 / 12;
@@ -82,7 +97,6 @@ public class AnalogClockView extends View {
         invalidate();
     }
 
-
     public void decreaseMinute() {
         minute = (minute - 5 + 60) % 60;
         invalidate();
@@ -96,8 +110,10 @@ public class AnalogClockView extends View {
     public int getMinute() {
         return minute;
     }
+
     public void setTime(int hour, int minute) {
         this.hour = hour;
         this.minute = minute;
-        invalidate();}
+        invalidate();
+    }
 }
