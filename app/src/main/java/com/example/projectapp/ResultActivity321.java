@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -15,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class ResultActivity321 extends AppCompatActivity {
 
     Button buttonHomePage , buttonTryAgain;
-    TextView highestScoreText, personalScoreText;
+    TextView personalScoreText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,15 +28,12 @@ public class ResultActivity321 extends AppCompatActivity {
 
         buttonHomePage = findViewById(R.id.homeButton123);
         buttonTryAgain = findViewById(R.id.tryAgain123);
-        highestScoreText = findViewById(R.id.highestScore);
         personalScoreText = findViewById(R.id.yourScore);
 
         // Retrieve user's score and highest score from Intent extras
         Intent intent = getIntent();
         int userScore = intent.getIntExtra("userScore", 0);
-        int highestScore = intent.getIntExtra("highestScore", 0);
 
-        highestScoreText.setText(""+highestScore);
         personalScoreText.setText(""+userScore);
 
         buttonHomePage.setOnClickListener(new View.OnClickListener() {

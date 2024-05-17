@@ -6,39 +6,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".ResultActivity123">
+    tools:context=".ResultActivity321"
+    tools:layout_editor_absoluteX="30dp"
+    tools:layout_editor_absoluteY="1dp">
 
 
     <Button
         android:id="@+id/homeButton123"
-        android:layout_width="204dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginEnd="107dp"
         android:text="Return The Homepage"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/tryAgain123"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/tryAgain123"
+        app:layout_constraintTop_toTopOf="@+id/tryAgain123" />
 
     <Button
         android:id="@+id/tryAgain123"
-        android:layout_width="205dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="477dp"
-        android:layout_marginBottom="36dp"
+        android:layout_width="202dp"
+        android:layout_height="106dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginEnd="126dp"
+        android:layout_marginBottom="66dp"
         android:text="Try Again"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/homeButton123"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/homeButton123"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/highestScore" />
 
     <TextView
         android:id="@+id/yourScore123"
-        android:layout_width="181dp"
-        android:layout_height="56dp"
-        android:layout_marginBottom="468dp"
+        android:layout_width="223dp"
+        android:layout_height="88dp"
+        android:gravity="center"
+        android:layout_marginBottom="284dp"
         android:text="Your Score"
         android:textSize="35sp"
         android:textStyle="bold"
@@ -47,16 +51,18 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/yourScore"
-        android:layout_width="52dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginBottom="411dp"
+        android:id="@+id/highestScore"
+        android:layout_width="64dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="18dp"
         android:gravity="center"
         android:text="5"
         android:textSize="23sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/yourScore123"
+        app:layout_constraintBottom_toTopOf="@+id/tryAgain123"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/yourScore123" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

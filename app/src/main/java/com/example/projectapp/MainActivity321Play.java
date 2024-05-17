@@ -17,7 +17,6 @@ public class MainActivity321Play extends AppCompatActivity {
     private ArrayList<Integer> numbers;
     private ArrayList<Integer> shownNumbers;
     private int currentNumberIndex;
-    private TextView highestScoreTextView;
     private GridLayout gridLayout;
     private int highestScore;
     private int level;
@@ -32,12 +31,9 @@ public class MainActivity321Play extends AppCompatActivity {
 
         textView = findViewById(R.id.textView);
         gridLayout = findViewById(R.id.gridLayout);
-        highestScoreTextView = findViewById(R.id.highestScoreTextView); // Initialize highestScoreTextView
 
-        highestScore = 0;
         shownNumbers = new ArrayList<>();
         numbers = new ArrayList<>();
-        n = currentNumberIndex;
 
         for (int i = 1; i <= 9; i++) {
             numbers.add(i);
@@ -47,14 +43,16 @@ public class MainActivity321Play extends AppCompatActivity {
     }
 
     private void startGame() {
-        level = 1;
+        level++;
         currentNumberIndex = 0;
-        numNumbersToShow = 2;
+        numNumbersToShow++;
         textView.setText("Level " + level);
 
         Collections.shuffle(numbers);
+        shownNumbers.clear();
         showNumbers();
     }
+
 
     private void showNumbers() {
         new Handler().postDelayed(new Runnable() {
@@ -68,6 +66,7 @@ public class MainActivity321Play extends AppCompatActivity {
                     showNumbers();
                 } else {
                     textView.setText("Type the digits from end to beginning.");
+                    n = shownNumbers.size() - 1; // Initialize n to the last index of shownNumbers
                 }
             }
         }, 1500);
@@ -77,9 +76,9 @@ public class MainActivity321Play extends AppCompatActivity {
         Button button = (Button) view;
         int number = Integer.parseInt(button.getText().toString());
 
-        if (number == shownNumbers.get(n - 1) && n >= 0) {
-            n--;
+        if (n >= 0 && number == shownNumbers.get(n)) {
             button.setBackgroundColor(Color.GREEN);
+            n--; // Decrement n after a correct button press
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -87,34 +86,29 @@ public class MainActivity321Play extends AppCompatActivity {
                 }
             }, 1000);
 
+            if (n < 0) { // All numbers have been correctly pressed in reverse order
+                level++;
+                numNumbersToShow++;
+                startGame(); // Start next level
+            }
         } else {
             button.setBackgroundColor(Color.RED);
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    // button.setBackgroundColor(Color.TRANSPARENT);
+                    button.setBackgroundResource(R.drawable.button_background);
                 }
             }, 1000);
 
             handleWrongButtonClick();
         }
-
     }
 
     private void handleWrongButtonClick() {
         Intent intent = new Intent(MainActivity321Play.this, ResultActivity321.class);
         intent.putExtra("userScore", level); // Pass the user's score to the result activity
-        intent.putExtra("highestScore", highestScore); // Pass the highest score to the result activity
         startActivity(intent);
         finish();
 
-        updateHighestScore(level);
-    }
-    private void updateHighestScore(int score) {
-        // Update highest score if the current level is higher
-        if (score > highestScore) {
-            highestScore = score;
-            highestScoreTextView.setText("Highest Score: " +highestScore);
-        }
     }
 }

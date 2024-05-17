@@ -29,15 +29,12 @@ public class ResultActivity123 extends AppCompatActivity {
 
         buttonHomePage = findViewById(R.id.homeButton123);
         buttonTryAgain = findViewById(R.id.tryAgain123);
-        highestScoreText = findViewById(R.id.highestScore);
         personalScoreText = findViewById(R.id.yourScore);
 
         // Retrieve user's score and highest score from Intent extras
         Intent intent = getIntent();
         int userScore = intent.getIntExtra("userScore", 0);
-        int highestScore = intent.getIntExtra("highestScore", 0);
 
-        highestScoreText.setText(""+highestScore);
         personalScoreText.setText(""+userScore);
 
         buttonHomePage.setOnClickListener(new View.OnClickListener() {

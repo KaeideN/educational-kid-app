@@ -1,0 +1,125 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivitySeasons">
+
+    <Button
+        android:id="@+id/buttonPlay"
+        android:layout_width="152dp"
+        android:layout_height="77dp"
+        android:text="PLAY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seasonLayout"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <LinearLayout
+        android:id="@+id/seasonLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/buttonPlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Spring -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:src="@drawable/spring" />
+
+            <TextView
+                android:id="@+id/springText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="- Sunny days\n- Colorful flowers\n- Return of playful animals"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Summer -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="match_parent"
+                android:layout_height="217dp"
+                android:layout_weight="1"
+                android:src="@drawable/summer" />
+
+            <TextView
+                android:id="@+id/summerText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="- Warmest season of the year\n- Longer days and higher temperatures."
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Fall -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="match_parent"
+                android:layout_height="217dp"
+                android:layout_weight="1"
+                android:src="@drawable/fall" />
+
+            <TextView
+                android:id="@+id/fallText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="- Also known as autumn\n- Between summer and winter\n- Trees shed their leaves\n- It's a time of harvest"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Winter -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="match_parent"
+                android:layout_height="219dp"
+                android:layout_weight="1"
+                android:src="@drawable/winter" />
+
+            <TextView
+                android:id="@+id/winterText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="- Coldest season\n- Shorter days\n- Colder temperatures\n- Snowfall and snowman"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
