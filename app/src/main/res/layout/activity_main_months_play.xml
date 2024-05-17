@@ -1,30 +1,218 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivityMonthsPlay"
+    tools:context=".MainActivityDaysPlay"
     android:background="@drawable/background">
 
-    <Button
-        android:id="@+id/buttonHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="120dp"
-        android:text="HOME"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+    <!-- Timer TextView -->
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/timerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="284dp"
-        android:text="Months Quiz"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:textSize="30sp"
+        android:textColor="@android:color/black" />
+
+    <!-- ImageViews for the days of the week -->
+    <ImageView
+        android:id="@+id/january"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/january"
+        android:contentDescription="january" />
+
+    <ImageView
+        android:id="@+id/february"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/february"
+        android:contentDescription="february" />
+
+    <ImageView
+        android:id="@+id/march"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="205dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/march"
+        android:contentDescription="march" />
+
+    <ImageView
+        android:id="@+id/april"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="305dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/april"
+        android:contentDescription="april" />
+
+    <ImageView
+        android:id="@+id/may"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="110dp"
+        android:src="@drawable/may"
+        android:contentDescription="may" />
+
+    <ImageView
+        android:id="@+id/june"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="110dp"
+        android:src="@drawable/june"
+        android:contentDescription="june" />
+
+    <ImageView
+        android:id="@+id/july"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="205dp"
+        android:layout_marginTop="110dp"
+        android:src="@drawable/july"
+        android:contentDescription="july" />
+    <ImageView
+        android:id="@+id/august"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="305dp"
+        android:layout_marginTop="110dp"
+        android:src="@drawable/august"
+        android:contentDescription="august" />
+    <ImageView
+        android:id="@+id/september"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="210dp"
+        android:src="@drawable/september"
+        android:contentDescription="september" />
+    <ImageView
+        android:id="@+id/october"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="210dp"
+        android:src="@drawable/october"
+        android:contentDescription="october" />
+    <ImageView
+        android:id="@+id/november"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="205dp"
+        android:layout_marginTop="210dp"
+        android:src="@drawable/november"
+        android:contentDescription="november" />
+    <ImageView
+        android:id="@+id/december"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="305dp"
+        android:layout_marginTop="210dp"
+        android:src="@drawable/december"
+        android:contentDescription="december" />
+
+
+    <!-- Drop targets -->
+    <!-- These can be invisible as they are just for reference -->
+    <ImageView
+        android:id="@+id/drop_target_january"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="400dp"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/drop_target_february"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="400dp"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/drop_target_march"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="205dp"
+        android:layout_marginTop="400dp"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/drop_target_april"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="305dp"
+        android:layout_marginTop="400dp"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/drop_target_may"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="510dp"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/drop_target_june"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="510dp"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/drop_target_july"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="205dp"
+        android:layout_marginTop="510dp"
+        android:visibility="invisible" />
+    <ImageView
+        android:id="@+id/drop_target_august"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="305dp"
+        android:layout_marginTop="510dp"
+        android:visibility="invisible" />
+    <ImageView
+        android:id="@+id/drop_target_september"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="620dp"
+        android:visibility="invisible" />
+    <ImageView
+        android:id="@+id/drop_target_october"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="620dp"
+        android:visibility="invisible" />
+    <ImageView
+        android:id="@+id/drop_target_november"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="205dp"
+        android:layout_marginTop="620dp"
+        android:visibility="invisible" />
+    <ImageView
+        android:id="@+id/drop_target_december"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="305dp"
+        android:layout_marginTop="620dp"
+        android:visibility="invisible" />
+
+</RelativeLayout>
