@@ -56,7 +56,7 @@
         android:id="@+id/textViewScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Score: 0"
+        android:text="@string/current_score"
         android:textSize="20sp"
         android:fontFamily="sans-serif-black"
         android:textColor="@android:color/black"
@@ -69,7 +69,7 @@
         android:fontFamily="sans-serif-black"
         android:layout_marginTop="350dp"
         android:textSize="20sp"
-        android:text="Best: 0"
+        android:text="@string/personal_best"
         android:textColor="@android:color/black" />
 
     <Button

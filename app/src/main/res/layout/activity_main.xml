@@ -8,6 +8,27 @@
     tools:context=".MainActivity"
     android:background="@drawable/background">
 
+    <RelativeLayout
+        android:id="@+id/showlangdialog"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/dialog_language"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="EN"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </RelativeLayout>
 
     <Button
         android:id="@+id/button1"
@@ -18,7 +39,7 @@
         android:layout_marginEnd="59dp"
         android:layout_marginBottom="20dp"
         android:onClick="disable"
-        android:text="Analog Clock"
+        android:text="@string/analog_clock"
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintHorizontal_bias="0.0"
@@ -45,7 +66,7 @@
         android:layout_marginStart="18dp"
         android:layout_marginEnd="59dp"
         android:layout_marginBottom="20dp"
-        android:text="Days"
+        android:text="@string/days"
         app:layout_constraintBottom_toTopOf="@+id/button5"
         app:layout_constraintEnd_toStartOf="@+id/button4"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +78,7 @@
         android:layout_height="0dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="19dp"
-        android:text="Months"
+        android:text="@string/months"
         app:layout_constraintBottom_toTopOf="@+id/button6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button3"
@@ -95,7 +116,7 @@
         android:layout_marginStart="26dp"
         android:layout_marginEnd="73dp"
         android:layout_marginBottom="26dp"
-        android:text="Pronunciation"
+        android:text="@string/pronunciation"
         app:layout_constraintBottom_toTopOf="@+id/button9"
         app:layout_constraintEnd_toStartOf="@+id/button8"
         app:layout_constraintStart_toStartOf="parent"
@@ -107,7 +128,7 @@
         android:layout_height="0dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="27dp"
-        android:text="Yönler"
+        android:text="@string/directions"
         app:layout_constraintBottom_toTopOf="@+id/button10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button7"
@@ -115,12 +136,12 @@
 
     <Button
         android:id="@+id/button9"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="142dp"
+        android:layout_height="64dp"
         android:layout_marginStart="26dp"
         android:layout_marginEnd="78dp"
         android:layout_marginBottom="24dp"
-        android:text="Çarpma"
+        android:text="@string/multiplication"
         app:layout_constraintBottom_toTopOf="@+id/button11"
         app:layout_constraintEnd_toStartOf="@+id/button10"
         app:layout_constraintStart_toStartOf="parent"
@@ -128,11 +149,11 @@
 
     <Button
         android:id="@+id/button10"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="157dp"
+        android:layout_height="67dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="31dp"
-        android:text="Resim Eşleştirme"
+        android:text="@string/finding_similar_images"
         app:layout_constraintBottom_toTopOf="@+id/button12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button9"
@@ -145,7 +166,7 @@
         android:layout_marginStart="26dp"
         android:layout_marginEnd="66dp"
         android:layout_marginBottom="42dp"
-        android:text="Top Takip"
+        android:text="@string/track_the_ball"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button12"
         app:layout_constraintStart_toStartOf="parent"
@@ -157,7 +178,7 @@
         android:layout_height="0dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="42dp"
-        android:text="Mevsimler"
+        android:text="@string/seasons"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button11"

@@ -1,6 +1,9 @@
 package com.example.projectapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,13 +13,22 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivityAnalogClock extends AppCompatActivity {
     private AnalogClockView analogClockView;
     private Button hourIncreaseButton, hourDecreaseButton, minuteIncreaseButton, minuteDecreaseButton;
-    private TextView timeTextView;
+    private TextView timeTextView, minute, hour;
     private Button buttonPlay;
     private Button backToMainFromAnalog;
+    private Context context;
+    private Resources resources;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Load the preferred language
+        SharedPreferences sharedPreferences = getSharedPreferences("Settings", MODE_PRIVATE);
+        String language = LocaleHelper.getLanguage(this);
+        context = LocaleHelper.setLocale(MainActivityAnalogClock.this, language);
+        resources = context.getResources();
+
         setContentView(R.layout.activity_main_analog_clock);
 
         // Find views by their IDs
@@ -27,6 +39,15 @@ public class MainActivityAnalogClock extends AppCompatActivity {
         minuteDecreaseButton = findViewById(R.id.decreaseMinute);
         buttonPlay = findViewById(R.id.buttonPlay);
         timeTextView = findViewById(R.id.timeTextView);
+        minute = findViewById(R.id.minute);
+        hour = findViewById(R.id.hour);
+        backToMainFromAnalog = findViewById(R.id.backToMainFromAnalog);
+
+        // Set texts with the selected language
+        hour.setText(resources.getString(R.string.hour));
+        minute.setText(resources.getString(R.string.minute));
+        buttonPlay.setText(resources.getString(R.string.play));
+        backToMainFromAnalog.setText(resources.getString(R.string.back));
 
         // Set click listeners for the buttons
         hourIncreaseButton.setOnClickListener(new View.OnClickListener() {
@@ -69,16 +90,16 @@ public class MainActivityAnalogClock extends AppCompatActivity {
             }
         });
 
-        // Set initial time display
-        updateTimeDisplay();
-        backToMainFromAnalog = findViewById(R.id.backToMainFromAnalog);
         backToMainFromAnalog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivityAnalogClock.this,MainActivity.class);
+                Intent intent = new Intent(MainActivityAnalogClock.this, MainActivity.class);
                 startActivity(intent);
             }
         });
+
+        // Set initial time display
+        updateTimeDisplay();
     }
 
     private void updateTimeDisplay() {

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="digital_clock">Dijital Saat</string>
+    <string name="analog_clock">Analog Saat</string>
+    <string name="days">Günler</string>
+    <string name="months">Aylar</string>
+    <string name="pronunciation">Telaffuz</string>
+    <string name="directions">Yönler</string>
+    <string name="multiplication">Çarpma</string>
+    <string name="finding_similar_images">Benzer Resmi Bulma</string>
+    <string name="track_the_ball">Topu Takip Et</string>
+    <string name="seasons">Mevsimler</string>
+    <string name="hour">Saat</string>
+    <string name="minute">Dakika</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="play">OYNA</string>
+    <string name="back">Geri</string>
+    <string name="enter_the_time">Saati giriniz </string>
+    <string name="submit">Gönder</string>
+    <string name="personal_best">En Yüksek Skor</string>
+    <string name="current_score">Şuanki Skor</string>
+    <string name="questions">Sorular</string>
+    <string name="digital_clock_tutorial">Şekilde gösterilen saati seçiniz.</string>
+    <string name="TutorialHeader123">Hafıza Oyunu Sayılarla Öğren ve Oyna</string>
+    <string name="sequence">Sırayı Hatırla</string>
+    <string name="first_info123">Gözünü dört aç! Sayıların görünme sırasını aklinda tut.</string>
+    <string name="tap_the_buttons">Butonlara Tıkla</string>
+    <string name="second_info123">Üstünde sayı olan butonlara gösterilen sırayla bas.</string>
+    <string name="mistakes_happen">Oops! Hatalar Olabilir</string>
+    <string name="third_info123">Yanlış düğmeye basarsan buton kısa süreliğine kırmızı renkte yanıp söner.Endişelenme, tekrar dene!</string>
+    <string name="your_score">Skorun</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>

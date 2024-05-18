@@ -43,7 +43,7 @@ public class MainActivity321Play extends AppCompatActivity {
     }
 
     private void startGame() {
-        level++;
+
         currentNumberIndex = 0;
         numNumbersToShow++;
         textView.setText("Level " + level);

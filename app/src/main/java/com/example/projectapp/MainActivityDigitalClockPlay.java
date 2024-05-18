@@ -1,7 +1,9 @@
 package com.example.projectapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,6 +24,8 @@ import java.util.Random;
 public class MainActivityDigitalClockPlay extends AppCompatActivity {
 
     private ImageView imageClock;
+    private Context context;
+    private Resources resources;
     private Button buttonOption1, buttonOption2, buttonOption3, buttonBack;
     private TextView textViewScore, textViewBest, textViewQuestionCount;
     private List<Integer> clockImages = Arrays.asList(
@@ -50,6 +54,11 @@ public class MainActivityDigitalClockPlay extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_digital_clock_play);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("Settings", MODE_PRIVATE);
+        String language = LocaleHelper.getLanguage(this);
+        context = LocaleHelper.setLocale(MainActivityDigitalClockPlay.this, language);
+        resources = context.getResources();
+
         sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         playerBest = sharedPreferences.getInt("bestScore", 0);
 
@@ -62,7 +71,7 @@ public class MainActivityDigitalClockPlay extends AppCompatActivity {
         textViewBest = findViewById(R.id.textViewBest);
         textViewQuestionCount = findViewById(R.id.textViewQuestionCount);
 
-        textViewBest.setText("Best: " + playerBest);
+        textViewBest.setText(resources.getString(R.string.personal_best)+" " + playerBest);
         updateQuestionCount();
 
         buttonOption1.setOnClickListener(new View.OnClickListener() {
@@ -218,13 +227,13 @@ public class MainActivityDigitalClockPlay extends AppCompatActivity {
         }
 
         // Update the score text view
-        textViewScore.setText("Score: " + currentScore);
+        textViewScore.setText(resources.getString(R.string.current_score) +" "+ currentScore);
 
         if (questionCount > totalQuestions) {
             // End of questions
             if (currentScore > playerBest) {
                 playerBest = currentScore;
-                textViewBest.setText("Best: " + playerBest);
+                textViewBest.setText(resources.getString(R.string.personal_best) +" "+ playerBest);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putInt("bestScore", playerBest);
                 editor.apply();

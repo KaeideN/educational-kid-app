@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="412dp"
-        android:text="Choose the correct time shown in the figure."
+        android:text="@string/digital_clock_tutorial"
         android:fontFamily="sans-serif-black"
         android:textSize="21sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,10 +23,10 @@
 
     <Button
         android:id="@+id/buttonPlay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="103dp"
+        android:layout_height="52dp"
         android:layout_marginBottom="26dp"
-        android:text="PLAY"
+        android:text="@string/play"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -44,10 +44,10 @@
 
     <Button
         android:id="@+id/backToMainFromDigital"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="98dp"
+        android:layout_height="53dp"
         android:layout_marginBottom="26dp"
-        android:text="Back"
+        android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonPlay"
         app:layout_constraintStart_toStartOf="parent" />

@@ -45,10 +45,46 @@
     </string>
     =======
     <string name="hour">Hour</string>
-    <string name="minute">MINUTE</string>
+    <string name="minute">Minute</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
     <string name="play">PLAY</string>
     <string name="december">december</string>
     >>>>>>> origin/main
+
+    <string name="digital_clock">Digital Clock</string>
+    <string name="analog_clock">Analog Clock</string>
+    <string name="days">Days</string>
+    <string name="months">Months</string>
+    <string name="pronunciation">Pronunciation</string>
+    <string name="directions">Directions</string>
+    <string name="multiplication">Multiplication</string>
+    <string name="finding_similar_images">Finding Similar Images</string>
+    <string name="track_the_ball">Track The Ball</string>
+    <string name="seasons">Seasons</string>
+    <string name="back">Back</string>
+    <string name="enter_the_time">Enter the time (HH:MM)</string>
+    <string name="submit">Submit</string>
+    <string name="personal_best">Personal Best</string>
+    <string name="current_score">Current Score</string>
+    <string name="questions">Questions</string>
+    <string name="digital_clock_tutorial">Choose the correct time shown in the figure.</string>
+    <string name="TutorialHeader123">Memory Game  Learn and Play with Numbers</string>
+    <string name="sequence">Remember the Sequence</string>
+    <string name="first_info123">Keep your eyes peeled! Memorize the order in which the numbers appear.</string>
+    <string name="tap_the_buttons">Tap the Buttons</string>
+    <string name="second_info123">Buttons with numbers will appear below. Tap them in the same order as shown.</string>
+    <string name="mistakes_happen">Oops! Mistakes Happen</string>
+    <string name="third_info123">If you tap the wrong button, it will flash red briefly. No worries, try again!</string>
+    <string name="your_score">Your Score</string>
+
+
+
+
+
+
+
+
+
+
 </resources>

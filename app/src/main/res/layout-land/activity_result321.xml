@@ -6,63 +6,80 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".ResultActivity321"
-    tools:layout_editor_absoluteX="30dp"
-    tools:layout_editor_absoluteY="1dp">
+    tools:context=".ResultActivity321">
 
-
-    <Button
-        android:id="@+id/homeButton123"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="107dp"
-        android:text="Return The Homepage"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tryAgain123"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tryAgain123"
-        app:layout_constraintTop_toTopOf="@+id/tryAgain123" />
-
-    <Button
-        android:id="@+id/tryAgain123"
-        android:layout_width="202dp"
-        android:layout_height="106dp"
-        android:layout_marginStart="98dp"
-        android:layout_marginEnd="126dp"
-        android:layout_marginBottom="66dp"
-        android:text="Try Again"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/homeButton123"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/highestScore" />
-
+    <!-- "Your Score" TextView -->
     <TextView
         android:id="@+id/yourScore123"
-        android:layout_width="223dp"
-        android:layout_height="88dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginBottom="284dp"
         android:text="Your Score"
         android:textSize="35sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/highestScore"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:layout_marginTop="16dp"/>
 
+    <!-- Score TextView -->
     <TextView
         android:id="@+id/highestScore"
-        android:layout_width="64dp"
-        android:layout_height="56dp"
-        android:layout_marginBottom="18dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="5"
         android:textSize="23sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tryAgain123"
+        app:layout_constraintTop_toBottomOf="@+id/yourScore123"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/yourScore123" />
+        app:layout_constraintBottom_toTopOf="@+id/buttonLayout"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Button Layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="736dp"
+        android:layout_height="131dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/highestScore">
+
+        <!-- Try Again Button -->
+
+        <!-- Return To Homepage Button -->
+        <Button
+            android:id="@+id/tryAgain123"
+            android:layout_width="198dp"
+            android:layout_height="76dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="8dp"
+            android:text="Try Again"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/homeButton123"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/homeButton123"
+            android:layout_width="240dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="16dp"
+            android:text="Return To Homepage"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tryAgain123"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

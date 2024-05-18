@@ -11,10 +11,10 @@
 
     <Button
         android:id="@+id/buttonPlay"
-        android:layout_width="83dp"
-        android:layout_height="52dp"
+        android:layout_width="98dp"
+        android:layout_height="63dp"
         android:layout_marginBottom="28dp"
-        android:text="Play"
+        android:text="@string/play"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -105,7 +105,7 @@
         android:layout_marginBottom="315dp"
         android:layout_marginStart="40dp"
         android:textSize="30sp"
-        android:text="Minute"
+        android:text="@string/minute"
         android:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -117,7 +117,7 @@
         android:layout_marginBottom="315dp"
         android:layout_marginEnd="70dp"
         android:textSize="30sp"
-        android:text="Hour"
+        android:text="@string/hour"
         android:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -145,10 +145,10 @@
 
     <Button
         android:id="@+id/backToMainFromAnalog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
+        android:layout_width="101dp"
+        android:layout_height="58dp"
         android:layout_marginBottom="28dp"
+        android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonPlay"
         app:layout_constraintStart_toStartOf="parent" />

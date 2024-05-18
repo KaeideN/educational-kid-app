@@ -44,6 +44,8 @@ dependencies {
     implementation(libs.firebase.auth)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
+    implementation("org.jetbrains:annotations:15.0")
+    implementation("org.jetbrains:annotations:15.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

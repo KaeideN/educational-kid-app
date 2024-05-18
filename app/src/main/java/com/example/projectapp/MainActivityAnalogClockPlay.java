@@ -3,6 +3,7 @@ package com.example.projectapp;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +24,8 @@ public class MainActivityAnalogClockPlay extends AppCompatActivity {
     private int personalBest;
     private int currentScore;
     private int questionCount;
+    private Context context;
+    private Resources resources;
 
     private SharedPreferences sharedPreferences;
     private static final String PREFS_NAME = "MyPrefs";
@@ -34,6 +37,12 @@ public class MainActivityAnalogClockPlay extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_analog_clock_play);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("Settings", MODE_PRIVATE);
+        String language = LocaleHelper.getLanguage(this);
+        context = LocaleHelper.setLocale(MainActivityAnalogClockPlay.this, language);
+        resources = context.getResources();
+
+
         // Find views by their IDs
         analogClockView = findViewById(R.id.analogClockView);
         timeInputEditText = findViewById(R.id.timeInputEditText);
@@ -43,11 +52,17 @@ public class MainActivityAnalogClockPlay extends AppCompatActivity {
         personalBestTextView = findViewById(R.id.personalBestTextView);
         currentScoreTextView = findViewById(R.id.currentScoreTextView);
 
+        timeInputEditText.setText(resources.getString(R.string.enter_the_time));
+        submitButton.setText(resources.getString(R.string.submit));
+        personalBestTextView.setText(resources.getString(R.string.personal_best));
+        currentScoreTextView.setText(resources.getString(R.string.current_score));
+
         // Load personal best and current score from SharedPreferences
         sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         personalBest = sharedPreferences.getInt(PERSONAL_BEST_KEY, 0);
         currentScore = 0; // Reset current score
         questionCount = 1; // Reset question count
+
 
         // Display personal best and current score
         updateScoreDisplay();
