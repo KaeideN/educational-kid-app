@@ -14,6 +14,7 @@
         android:layout_height="40dp"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints">
+
         <TextView
             android:id="@+id/dialog_language"
             android:layout_width="match_parent"
@@ -22,13 +23,6 @@
             android:text="EN"
             android:textSize="25sp"
             android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/language_flag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:src="@drawable/english_flag" />
 
         <ImageView
             android:layout_width="wrap_content"

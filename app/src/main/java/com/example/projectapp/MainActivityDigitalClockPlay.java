@@ -1,5 +1,6 @@
 package com.example.projectapp;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -54,7 +55,7 @@ public class MainActivityDigitalClockPlay extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_digital_clock_play);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("Settings", MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("Settings", MODE_PRIVATE);
         String language = LocaleHelper.getLanguage(this);
         context = LocaleHelper.setLocale(MainActivityDigitalClockPlay.this, language);
         resources = context.getResources();
@@ -71,8 +72,8 @@ public class MainActivityDigitalClockPlay extends AppCompatActivity {
         textViewBest = findViewById(R.id.textViewBest);
         textViewQuestionCount = findViewById(R.id.textViewQuestionCount);
 
-        textViewBest.setText(resources.getString(R.string.personal_best)+": " + playerBest);
-        textViewScore.setText(resources.getString(R.string.current_score)+": "+currentScore);
+        textViewBest.setText(resources.getString(R.string.personal_best) + ": " + playerBest);
+        textViewScore.setText(resources.getString(R.string.current_score) + ": " + currentScore);
         updateQuestionCount();
 
         buttonOption1.setOnClickListener(new View.OnClickListener() {
@@ -114,8 +115,7 @@ public class MainActivityDigitalClockPlay extends AppCompatActivity {
 
     private void displayNextClock() {
         if (questionCount > totalQuestions) {
-            // End of questions
-            Toast.makeText(this, "End of questions! Your final score is " + currentScore, Toast.LENGTH_LONG).show();
+            endGame();
             return;
         }
 
@@ -136,20 +136,14 @@ public class MainActivityDigitalClockPlay extends AppCompatActivity {
         buttonOption2.setText(options.get(1));
         buttonOption3.setText(options.get(2));
 
-        updateQuestionCount();
-        questionCount++;
+        updateQuestionCount(); // Ensure the question count is updated
     }
 
     private String convertTo12HourFormat(String time24Hour) {
         try {
             SimpleDateFormat sdf24Hour = new SimpleDateFormat("HH:mm", Locale.getDefault());
             Date date = sdf24Hour.parse(time24Hour);
-            SimpleDateFormat sdf12Hour;
-            if (time24Hour.startsWith("10") || time24Hour.startsWith("11") || time24Hour.startsWith("12")) {
-                sdf12Hour = new SimpleDateFormat("hh:mm a", Locale.getDefault());
-            } else {
-                sdf12Hour = new SimpleDateFormat("h:mm a", Locale.getDefault());
-            }
+            SimpleDateFormat sdf12Hour = new SimpleDateFormat("hh:mm a", Locale.getDefault());
             return sdf12Hour.format(date);
         } catch (ParseException e) {
             e.printStackTrace();
@@ -219,7 +213,7 @@ public class MainActivityDigitalClockPlay extends AppCompatActivity {
     private void checkAnswer(String selectedOption) {
         String correctTime = times24Hour.get(currentIndex);
 
-        if (selectedOption.equals(correctTime) || selectedOption.equals(convertTo12HourFormat(correctTime))) {
+        if (selectedOption.equals(convertTo12HourFormat(correctTime))) {
             currentScore += 2;
             Toast.makeText(this, "Correct! Score: " + currentScore, Toast.LENGTH_SHORT).show();
         } else {
@@ -228,30 +222,36 @@ public class MainActivityDigitalClockPlay extends AppCompatActivity {
         }
 
         // Update the score text view
-        textViewScore.setText(resources.getString(R.string.current_score) +" "+ currentScore);
+        textViewScore.setText(resources.getString(R.string.current_score) + " " + currentScore);
+
+        questionCount++; // Increment here after checking answer
 
         if (questionCount > totalQuestions) {
-            // End of questions
-            if (currentScore > playerBest) {
-                playerBest = currentScore;
-                textViewBest.setText(resources.getString(R.string.personal_best) +" "+ playerBest);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putInt("bestScore", playerBest);
-                editor.apply();
-                Toast.makeText(this, "End of questions! Your final score is " + currentScore + ". New Personal Best!", Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(this, "End of questions! Your final score is " + currentScore, Toast.LENGTH_LONG).show();
-            }
-            // Hide options
-            buttonOption1.setVisibility(View.INVISIBLE);
-            buttonOption2.setVisibility(View.INVISIBLE);
-            buttonOption3.setVisibility(View.INVISIBLE);
-            // Make back button visible
-            buttonBack.setText(resources.getString(R.string.back));
-            buttonBack.setVisibility(View.VISIBLE);
-            return;
+            endGame();
+        } else {
+            displayNextClock();
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    private void endGame() {
+        if (currentScore > playerBest) {
+            playerBest = currentScore;
+            textViewBest.setText(resources.getString(R.string.personal_best) + " " + playerBest);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putInt("bestScore", playerBest);
+            editor.apply();
+            Toast.makeText(this, "End of questions! Your final score is " + currentScore + ". New Personal Best!", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "End of questions! Your final score is " + currentScore, Toast.LENGTH_LONG).show();
         }
 
-        displayNextClock();
+        // Hide options
+        buttonOption1.setVisibility(View.INVISIBLE);
+        buttonOption2.setVisibility(View.INVISIBLE);
+        buttonOption3.setVisibility(View.INVISIBLE);
+        // Make back button visible
+        buttonBack.setText(resources.getString(R.string.back));
+        buttonBack.setVisibility(View.VISIBLE);
     }
 }
