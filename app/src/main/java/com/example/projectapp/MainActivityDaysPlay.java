@@ -11,10 +11,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Collections;
-import java.util.ArrayList;
-import java.util.List;
-
 public class MainActivityDaysPlay extends AppCompatActivity implements View.OnClickListener {
 
     private int currentPosition = 0; // To keep track of the current position
@@ -57,49 +53,48 @@ public class MainActivityDaysPlay extends AppCompatActivity implements View.OnCl
         ImageView fridayImageView = findViewById(R.id.friday);
         ImageView saturdayImageView = findViewById(R.id.saturday);
 
-        // Create a list of the ImageView references
-        List<ImageView> daysList = new ArrayList<>();
-        daysList.add(sundayImageView);
-        daysList.add(mondayImageView);
-        daysList.add(tuesdayImageView);
-        daysList.add(wednesdayImageView);
-        daysList.add(thursdayImageView);
-        daysList.add(fridayImageView);
-        daysList.add(saturdayImageView);
-
-        // Shuffle the list to randomize the order
-        Collections.shuffle(daysList);
-
-        // Set OnClickListener for each ImageView and initialize original positions
-        for (int i = 0; i < daysList.size(); i++) {
-            ImageView dayImageView = daysList.get(i);
-            dayImageView.setOnClickListener(this);
-            int finalI = i;
-            dayImageView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-                @Override
-                public void onGlobalLayout() {
-                    // Remove the listener to avoid multiple calls
-                    dayImageView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                    // Initialize original positions
-                    originalX[finalI] = dayImageView.getLeft();
-                    originalY[finalI] = dayImageView.getTop();
-                }
-            });
-        }
+        // Set OnClickListener for each ImageView
+        sundayImageView.setOnClickListener(this);
+        mondayImageView.setOnClickListener(this);
+        tuesdayImageView.setOnClickListener(this);
+        wednesdayImageView.setOnClickListener(this);
+        thursdayImageView.setOnClickListener(this);
+        fridayImageView.setOnClickListener(this);
+        saturdayImageView.setOnClickListener(this);
 
         // Timer TextView
         timerTextView = findViewById(R.id.timerTextView);
 
-        // Start the timer after the layout is drawn
-        findViewById(R.id.mainLayout).getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+        // Use ViewTreeObserver to get the initial positions after layout is drawn
+        ViewTreeObserver vto = sundayImageView.getViewTreeObserver();
+        vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                findViewById(R.id.mainLayout).getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                // Remove the listener to avoid multiple calls
+                sundayImageView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+
+                // Initialize original positions
+                originalX[0] = sundayImageView.getLeft();
+                originalY[0] = sundayImageView.getTop();
+                originalX[1] = mondayImageView.getLeft();
+                originalY[1] = mondayImageView.getTop();
+                originalX[2] = tuesdayImageView.getLeft();
+                originalY[2] = tuesdayImageView.getTop();
+                originalX[3] = wednesdayImageView.getLeft();
+                originalY[3] = wednesdayImageView.getTop();
+                originalX[4] = thursdayImageView.getLeft();
+                originalY[4] = thursdayImageView.getTop();
+                originalX[5] = fridayImageView.getLeft();
+                originalY[5] = fridayImageView.getTop();
+                originalX[6] = saturdayImageView.getLeft();
+                originalY[6] = saturdayImageView.getTop();
+
+                // Start the timer
                 startTime = System.currentTimeMillis();
                 timerHandler.postDelayed(timerRunnable, 0);
             }
         });
-    }
+    } 
 
     @Override
     public void onClick(View view) {
