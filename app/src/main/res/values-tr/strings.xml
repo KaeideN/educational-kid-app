@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Play And Learn</string>
     <string name="digital_clock">Dijital Saat</string>
     <string name="analog_clock">Analog Saat</string>
     <string name="days">Günler</string>
