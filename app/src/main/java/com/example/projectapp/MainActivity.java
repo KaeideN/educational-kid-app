@@ -14,17 +14,20 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     ImageButton button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12;
-    TextView dialog_langueage;
+    TextView dialog_language;
+    RelativeLayout show_lang_dialog;
     RelativeLayout show_lan_dialog;
     Context context;
     Resources resources;
     SharedPreferences sharedPreferences;
+    ImageView languageFlag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +48,18 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        show_lan_dialog = findViewById(R.id.showlangdialog);
-        dialog_langueage = findViewById(R.id.dialog_language);
-        dialog_langueage.setText(language.equals("en") ? "EN" : "TR");
+        show_lang_dialog = findViewById(R.id.showlangdialog);
+        dialog_language = findViewById(R.id.dialog_language);
+        languageFlag = findViewById(R.id.language_flag);
+        dialog_language.setText(language.equals("en") ? "EN" : "TR");
 
-        show_lan_dialog.setOnClickListener(new View.OnClickListener() {
+        // Set the initial flag
+        languageFlag.setImageResource(language.equals("en") ? R.drawable.english_flag : R.drawable.turkish_flag);
+
+        show_lang_dialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String[] Language = {"EN", "TR"};
+                final String[] Language = {"English", "Türkçe"};
 
                 final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 
@@ -61,10 +68,10 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 String selectedLanguage = Language[i];
-                                dialog_langueage.setText(selectedLanguage);
+                                dialog_language.setText(selectedLanguage);
 
                                 // Save selected language
-                                LocaleHelper.saveLanguage(MainActivity.this, selectedLanguage.equals("EN") ? "en" : "tr");
+                                LocaleHelper.saveLanguage(MainActivity.this, selectedLanguage.equals("English") ? "en" : "tr");
 
                                 // Restart activity to apply changes
                                 restartActivity();
@@ -198,6 +205,7 @@ public class MainActivity extends AppCompatActivity {
             button10.setBackgroundResource(R.drawable.findtheimage_en);
             button11.setBackgroundResource(R.drawable.tracktheball_en);
             button12.setBackgroundResource(R.drawable.seasons_en);
+
         } else if (language.equals("tr")) {
             button1.setBackgroundResource(R.drawable.analogbutton_tr);
             button2.setBackgroundResource(R.drawable.digitalbutton_tr);
@@ -211,6 +219,8 @@ public class MainActivity extends AppCompatActivity {
             button10.setBackgroundResource(R.drawable.findtheimage_tr);
             button11.setBackgroundResource(R.drawable.tracktheball_tr);
             button12.setBackgroundResource(R.drawable.seasons_tr);
+
+
         }
     }
 

@@ -22,6 +22,7 @@ public class MainActivityABCPlay extends AppCompatActivity {
     private ImageView imageQuestion;
     private Button buttonOption1, buttonOption2, buttonOption3, buttonOption4, buttonTryAgain,buttonHome;
     private TextView textViewScore, textViewBest, textViewQuestionCount;
+
     private List<Integer> images = Arrays.asList(
             R.drawable.apple, R.drawable.banana, R.drawable.pineapple, R.drawable.astronaut,
             R.drawable.backpack, R.drawable.computer, R.drawable.cellphone, R.drawable.television, R.drawable.library,R.drawable.apartment,R.drawable.rabbit,
@@ -95,9 +96,6 @@ public class MainActivityABCPlay extends AppCompatActivity {
                 checkAnswer(buttonOption4.getText().toString());
             }
         });
-
-
-
 
         buttonTryAgain.setOnClickListener(new View.OnClickListener() {
             @Override

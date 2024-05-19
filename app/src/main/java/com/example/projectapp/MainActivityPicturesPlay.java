@@ -54,6 +54,7 @@ public class MainActivityPicturesPlay extends AppCompatActivity {
         context = LocaleHelper.setLocale(MainActivityPicturesPlay.this, language);
         resources = context.getResources();
 
+
         imageQuestion = findViewById(R.id.imageQuestion);
         buttonOption1 = findViewById(R.id.buttonOption1);
         buttonOption2 = findViewById(R.id.buttonOption2);

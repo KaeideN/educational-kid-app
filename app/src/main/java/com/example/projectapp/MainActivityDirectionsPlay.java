@@ -22,6 +22,8 @@ public class MainActivityDirectionsPlay extends AppCompatActivity {
     private ImageView imageQuestion;
     private Button buttonOption1, buttonOption2, buttonOption3, buttonOption4, buttonTryAgain, buttonHome;
     private TextView textViewScore, textViewBest, textViewQuestionCount;
+    private Context context;
+    private Resources resources;
     private List<Integer> images = Arrays.asList(
             R.drawable.forward, R.drawable.inside, R.drawable.between, R.drawable.right_side,
             R.drawable.left_side, R.drawable.outside, R.drawable.across_to, R.drawable.on_top, R.drawable.below, R.drawable.back
@@ -37,8 +39,7 @@ public class MainActivityDirectionsPlay extends AppCompatActivity {
     private int questionCount = 1;
     private int totalQuestions = 10; // Total number of questions
     private SharedPreferences sharedPreferences, sharedPreferencesLang;
-    private Context context;
-    private Resources resources;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +95,7 @@ public class MainActivityDirectionsPlay extends AppCompatActivity {
             }
         });
 
+        buttonTryAgain.setText(resources.getString(R.string.try_again_button));
         buttonTryAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,6 +105,7 @@ public class MainActivityDirectionsPlay extends AppCompatActivity {
             }
         });
 
+        buttonHome.setText(resources.getString(R.string.home_button));
         buttonHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

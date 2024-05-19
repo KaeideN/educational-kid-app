@@ -111,26 +111,9 @@
     <string name="second_infoPictures">You will see a picture at the top of the screen. This picture could be an animal, a fruit, a vehicle, or another object.</string>
     <string name="chooseTheSimilar">Choose the Correct Option</string>
     <string name="third_infoPictures">Find the image that best matches the picture above and click that button.</string>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <string name="TutorialHeaderDirections">Directions\nLearn And Play With Quiz !</string>
+    <string name="first_infoDirections">Start the quiz by pressing the button.</string>
+    <string name="second_infoDirections">You will see images on the screen. Choose the correct direction for the image.</string>
+    <string name="third_infoDirections">At the end of the quiz, you will see your total score.Try to beat your previous score each time you play!</string>
 
 </resources>

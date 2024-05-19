@@ -1,8 +1,12 @@
 package com.example.projectapp;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -20,12 +24,14 @@ public class MainActivityMonthsPlay extends AppCompatActivity implements View.On
     private int[] originalY = new int[12];
     private boolean[] isMoved = new boolean[12];
     public int[] currentMonthPosition = new int[12]; // To track the current drop positions
+    Button homeButton,tryAgainButton;
 
     // Timer related variables
     private long startTime = 0L;
     private Handler timerHandler = new Handler();
     private TextView timerTextView;
-
+    private Context context;
+    private Resources resources;
     private Runnable timerRunnable = new Runnable() {
         @Override
         public void run() {
@@ -43,6 +49,13 @@ public class MainActivityMonthsPlay extends AppCompatActivity implements View.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_months_play);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("Settings", MODE_PRIVATE);
+        String language = LocaleHelper.getLanguage(this);
+        context = LocaleHelper.setLocale(MainActivityMonthsPlay.this, language);
+        resources = context.getResources();
+
+
 
         // Find ImageView elements
         ImageView januaryImageView = findViewById(R.id.january);

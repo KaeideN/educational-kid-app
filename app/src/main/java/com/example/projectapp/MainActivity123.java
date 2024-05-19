@@ -30,6 +30,7 @@ public class MainActivity123 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         SharedPreferences sharedPreferences = getSharedPreferences("Settings", MODE_PRIVATE);
         String language = LocaleHelper.getLanguage(this);
         context = LocaleHelper.setLocale(MainActivity123.this, language);

@@ -25,8 +25,11 @@
             android:textStyle="bold" />
 
         <ImageView
+            android:id="@+id/language_flag"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/english_flag" />
 
 
     </RelativeLayout>

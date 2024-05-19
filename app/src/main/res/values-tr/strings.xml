@@ -64,12 +64,9 @@
     <string name="second_infoPictures">Ekranın üst kısmında bir resim göreceksin. Bu resim bir hayvan, bir meyve, bir araç ya da başka bir nesne olabilir.</string>
     <string name="chooseTheSimilar">Doğru Seçeneği Seç</string>
     <string name="third_infoPictures">Yukarıdaki resme en uygun resmi bul ve o butona tıkla.</string>
-
-
-
-
-
-
-
+    <string name="TutorialHeaderDirections">Yönleri\nOynayarak Öğren ! </string>
+    <string name="first_infoDirections">Butona basarak quizi başlat.</string>
+    <string name="second_infoDirections">Ekranda bir resim göreceksin. Resme uygun yönün olduğu butona tıkla.</string>
+    <string name="third_infoDirections">Testin sonunda toplam puanınızı göreceksin. Her oynadığında önceki puanını geçmeye çalış!</string>
 
 </resources>
