@@ -13,13 +13,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    Button button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12;
-    TextView dialog_language;
+    ImageButton button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12;
+    TextView dialog_langueage;
     RelativeLayout show_lan_dialog;
     Context context;
     Resources resources;
@@ -45,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         show_lan_dialog = findViewById(R.id.showlangdialog);
-        dialog_language = findViewById(R.id.dialog_language);
+        dialog_langueage = findViewById(R.id.dialog_language);
+        dialog_langueage.setText(language.equals("en") ? "EN" : "TR");
 
         show_lan_dialog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,16 +61,13 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 String selectedLanguage = Language[i];
-                                dialog_language.setText(selectedLanguage);
-                                
+                                dialog_langueage.setText(selectedLanguage);
+
                                 // Save selected language
                                 LocaleHelper.saveLanguage(MainActivity.this, selectedLanguage.equals("EN") ? "en" : "tr");
 
-                                // Update language in the app
-                                context = LocaleHelper.setLocale(MainActivity.this, selectedLanguage.equals("EN") ? "en" : "tr");
-                                resources = context.getResources();
-
-                                updateTexts();
+                                // Restart activity to apply changes
+                                restartActivity();
                                 dialogInterface.dismiss();
                             }
                         })
@@ -117,75 +116,108 @@ public class MainActivity extends AppCompatActivity {
                 startActivityWithLanguage(MainActivityDays.class);
             }
         });
+
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivityWithLanguage(MainActivityMonths.class);
             }
         });
+
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivityWithLanguage(MainActivity123.class);
             }
         });
+
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivityWithLanguage(MainActivity321.class);
             }
         });
+
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivityWithLanguage(MainActivityABC.class);
             }
         });
+
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivityWithLanguage(MainActivityDirections.class);
             }
         });
+
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivityWithLanguage(MainActivityMultiplication.class);
             }
         });
+
         button10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivityWithLanguage(MainActivityPictures.class);
             }
         });
+
         button11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivityWithLanguage(RedBall.class);
             }
         });
+
         button12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivityWithLanguage(MainActivitySeasons.class);
             }
         });
-        // Update texts based on the current language
-        updateTexts();
+
+        // Update texts and button images based on the current language
+        updateButtonImages(language);
     }
 
-    private void updateTexts() {
-        button1.setText(resources.getString(R.string.analog_clock));
-        button2.setText(resources.getString(R.string.digital_clock));
-        button3.setText(resources.getString(R.string.days));
-        button4.setText(resources.getString(R.string.months));
-        button7.setText(resources.getString(R.string.pronunciation));
-        button8.setText(resources.getString(R.string.directions));
-        button9.setText(resources.getString(R.string.multiplication));
-        button10.setText(resources.getString(R.string.finding_similar_images));
-        button11.setText(resources.getString(R.string.track_the_ball));
-        button12.setText(resources.getString(R.string.seasons));
+    private void updateButtonImages(String language) {
+        if (language.equals("en")) {
+            button1.setBackgroundResource(R.drawable.analogbutton_en);
+            button2.setBackgroundResource(R.drawable.digitalbutton_en);
+            button3.setBackgroundResource(R.drawable.daysbutton_en);
+            button4.setBackgroundResource(R.drawable.monthsbutton_en);
+            button5.setBackgroundResource(R.drawable.numbersfun_en);
+            button6.setBackgroundResource(R.drawable.reverseit_en);
+            button7.setBackgroundResource(R.drawable.pronounce_en);
+            button8.setBackgroundResource(R.drawable.directions_en);
+            button9.setBackgroundResource(R.drawable.multiplefun_en);
+            button10.setBackgroundResource(R.drawable.findtheimage_en);
+            button11.setBackgroundResource(R.drawable.tracktheball_en);
+            button12.setBackgroundResource(R.drawable.seasons_en);
+        } else if (language.equals("tr")) {
+            button1.setBackgroundResource(R.drawable.analogbutton_tr);
+            button2.setBackgroundResource(R.drawable.digitalbutton_tr);
+            button3.setBackgroundResource(R.drawable.daysbutton_tr);
+            button4.setBackgroundResource(R.drawable.monthsbutton_tr);
+            button5.setBackgroundResource(R.drawable.numbersfun_tr);
+            button6.setBackgroundResource(R.drawable.reverseit_tr);
+            button7.setBackgroundResource(R.drawable.pronounce_tr);
+            button8.setBackgroundResource(R.drawable.directions_tr);
+            button9.setBackgroundResource(R.drawable.multiplefun_tr);
+            button10.setBackgroundResource(R.drawable.findtheimage_tr);
+            button11.setBackgroundResource(R.drawable.tracktheball_tr);
+            button12.setBackgroundResource(R.drawable.seasons_tr);
+        }
+    }
+
+    private void restartActivity() {
+        Intent intent = getIntent();
+        finish();
+        startActivity(intent);
     }
 
     private void startActivityWithLanguage(Class<?> cls) {

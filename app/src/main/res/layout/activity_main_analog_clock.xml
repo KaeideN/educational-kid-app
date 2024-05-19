@@ -122,15 +122,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="293dp"
-        android:layout_height="308dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="56dp"
-        app:layout_constraintEnd_toEndOf="@+id/analogClockView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/clocknumbers" />
+
     <TextView
         android:id="@+id/timeTextView"
         android:layout_width="wrap_content"
