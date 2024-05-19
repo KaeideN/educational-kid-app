@@ -104,6 +104,18 @@
     <string name="pretty_good">You are pretty good.</string>
     <string name="try_more">You have to try little more.</string>
     <string name="very_good">You are very good congratulations !</string>
+    <string name="TutorialHeaderPictures">Choose The Similar Image !</string>
+    <string name="startTheGame">Start the Game</string>
+    <string name="first_infoPictures">Press the start button to begin the game.</string>
+    <string name="lookAtThePicture">Look at the Picture</string>
+    <string name="second_infoPictures">You will see a picture at the top of the screen. This picture could be an animal, a fruit, a vehicle, or another object.</string>
+    <string name="chooseTheSimilar">Choose the Correct Option</string>
+    <string name="third_infoPictures">Find the image that best matches the picture above and click that button.</string>
+
+
+
+
+
 
 
 

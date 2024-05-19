@@ -87,7 +87,7 @@
         android:textColor="@android:color/black" />
 
     <Button
-        android:id="@+id/tryAgainABC"
+        android:id="@+id/tryAgain"
         android:layout_width="155dp"
         android:layout_height="77dp"
         android:layout_alignParentStart="true"
@@ -106,7 +106,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginEnd="6dp"
         android:layout_marginBottom="20dp"
-        android:layout_toEndOf="@+id/tryAgainABC"
+        android:layout_toEndOf="@+id/tryAgain"
         android:text="Return To Homepage"
         android:visibility="invisible" />
 

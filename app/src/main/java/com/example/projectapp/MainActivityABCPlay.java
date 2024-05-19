@@ -59,7 +59,7 @@ public class MainActivityABCPlay extends AppCompatActivity {
         buttonOption2 = findViewById(R.id.buttonOption2);
         buttonOption3 = findViewById(R.id.buttonOption3);
         buttonOption4 = findViewById(R.id.buttonOption4);
-        buttonTryAgain = findViewById(R.id.tryAgainABC);
+        buttonTryAgain = findViewById(R.id.tryAgain);
         buttonHome    = findViewById(R.id.backToHome);
         textViewScore = findViewById(R.id.textViewScore);
         textViewBest = findViewById(R.id.textViewBest);

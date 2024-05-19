@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     android:background="@drawable/background"
+    android:padding="16dp"
     tools:context=".MainActivityPicturesPlay">
 
     <TextView
@@ -17,7 +17,7 @@
         android:textColor="@android:color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageQuestion"
@@ -26,57 +26,62 @@
         android:layout_marginTop="16dp"
         android:contentDescription="Picture Image"
         android:src="@drawable/apple"
-        app:layout_constraintTop_toBottomOf="@id/textViewQuestionCount"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/textViewQuestionCount" />
 
     <ImageButton
         android:id="@+id/buttonOption1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="8dp"
-        app:layout_constraintTop_toBottomOf="@id/imageQuestion"
-        app:layout_constraintStart_toStartOf="parent"
+        android:scaleType="fitCenter"
         app:layout_constraintEnd_toStartOf="@id/buttonOption2"
-        app:layout_constraintWidth_percent="0.45"
         app:layout_constraintHeight_percent="0.25"
-        android:scaleType="fitCenter"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageQuestion"
+        app:layout_constraintWidth_percent="0.45" />
 
     <ImageButton
         android:id="@+id/buttonOption2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="8dp"
-        app:layout_constraintTop_toBottomOf="@id/imageQuestion"
-        app:layout_constraintStart_toEndOf="@id/buttonOption1"
+        android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintWidth_percent="0.45"
         app:layout_constraintHeight_percent="0.25"
-        android:scaleType="fitCenter"/>
+        app:layout_constraintStart_toEndOf="@+id/tryAgainABC"
+        app:layout_constraintTop_toBottomOf="@id/imageQuestion"
+        app:layout_constraintWidth_percent="0.45" />
 
     <ImageButton
         android:id="@+id/buttonOption3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="8dp"
-        app:layout_constraintTop_toBottomOf="@id/buttonOption1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/buttonOption4"
-        app:layout_constraintWidth_percent="0.45"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="25dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/backToHome"
         app:layout_constraintHeight_percent="0.25"
-        android:scaleType="fitCenter"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tryAgain"
+        app:layout_constraintWidth_percent="0.45" />
 
     <ImageButton
         android:id="@+id/buttonOption4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="156dp"
+        android:layout_height="162dp"
         android:layout_margin="8dp"
-        app:layout_constraintTop_toBottomOf="@id/buttonOption2"
-        app:layout_constraintStart_toEndOf="@id/buttonOption3"
+        android:layout_marginTop="4dp"
+        android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintWidth_percent="0.45"
         app:layout_constraintHeight_percent="0.25"
-        android:scaleType="fitCenter"/>
+        app:layout_constraintHorizontal_bias="0.794"
+        app:layout_constraintStart_toEndOf="@id/buttonOption3"
+        app:layout_constraintTop_toBottomOf="@+id/buttonOption2"
+        app:layout_constraintWidth_percent="0.45" />
 
     <TextView
         android:id="@+id/textViewScore"
@@ -86,8 +91,8 @@
         android:text="Score: 0"
         android:textColor="@android:color/black"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/buttonOption3"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonOption3" />
 
     <TextView
         android:id="@+id/textViewBest"
@@ -97,27 +102,40 @@
         android:text="Best: 0"
         android:textColor="@android:color/black"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/textViewScore"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewScore" />
 
     <Button
-        android:id="@+id/tryAgainABC"
-        android:layout_width="155dp"
-        android:layout_height="77dp"
-        android:layout_marginTop="24dp"
+        android:id="@+id/tryAgain"
+        android:layout_width="122dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="453dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="199dp"
         android:text="Try Again"
         android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@id/textViewBest"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textViewBest"
+        app:layout_constraintEnd_toStartOf="@+id/backToHome"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewQuestionCount"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/backToHome"
-        android:layout_width="183dp"
-        android:layout_height="77dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="135dp"
+        android:layout_height="79dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="20dp"
         android:text="Return To Homepage"
         android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@id/textViewBest"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonOption3"
+        app:layout_constraintTop_toBottomOf="@+id/imageQuestion"
+        app:layout_constraintVertical_bias="0.495" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

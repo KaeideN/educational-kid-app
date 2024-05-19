@@ -57,6 +57,16 @@
     <string name="try_more">Biraz daha denemelisin.</string>
     <string name="pretty_good">Gayet iyisin.</string>
     <string name="very_good">Çok iyisin tebrikler !</string>
+    <string name="TutorialHeaderPictures">Benzer Resmi Seç !</string>
+    <string name="startTheGame">Oyunu Başlat</string>
+    <string name="first_infoPictures">Oyunu başlatmak için butona bas.</string>
+    <string name="lookAtThePicture">Resmi İncele</string>
+    <string name="second_infoPictures">Ekranın üst kısmında bir resim göreceksin. Bu resim bir hayvan, bir meyve, bir araç ya da başka bir nesne olabilir.</string>
+    <string name="chooseTheSimilar">Doğru Seçeneği Seç</string>
+    <string name="third_infoPictures">Yukarıdaki resme en uygun resmi bul ve o butona tıkla.</string>
+
+
+
 
 
 
