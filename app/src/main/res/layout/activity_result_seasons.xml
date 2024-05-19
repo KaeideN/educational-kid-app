@@ -15,11 +15,13 @@
         android:layout_height="?attr/actionBarSize"
         android:background="#D4F2F2"
         android:elevation="0dp">
+
         <com.google.android.material.appbar.MaterialToolbar
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:titleCentered="true"
-            app:title="Quiz Result"/>
+            app:title="@string/quiz_result"
+            android:id="@+id/quizResult"
+            app:titleCentered="true" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <com.google.android.material.card.MaterialCardView
@@ -49,7 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Result Info"
+                android:text="@string/your_score"
                 android:textColor="@color/black"
                 android:textSize="17sp"
                 android:textStyle="bold" />
@@ -97,7 +99,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:text="Correct"
+                    android:id="@+id/correctText"
+                    android:text="@string/correct"
                     android:textColor="@color/black"
                     android:textSize="17sp"
                     android:textStyle="bold" />
@@ -138,7 +141,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:text="Wrong"
+                    android:text="@string/wrong"
+                    android:id="@+id/wrongText"
                     android:textColor="@color/black"
                     android:textSize="17sp"
                     android:textStyle="bold" />
@@ -175,7 +179,7 @@
                 android:id="@+id/tryAgainSeasonsText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Try Again"
+                android:text="@string/try_again_button"
                 android:textColor="@color/black"
                 android:textSize="17sp"
                 android:textStyle="bold" />
@@ -201,10 +205,10 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/resultTextView"
+                android:id="@+id/returnHomepage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Return to Homepage"
+                android:text="@string/home_button"
                 android:textColor="@color/black"
                 android:textSize="17sp"
                 android:textStyle="bold" />

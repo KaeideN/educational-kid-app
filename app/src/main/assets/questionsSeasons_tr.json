@@ -1,0 +1,60 @@
+{
+  "questions":[
+    {
+      "question":"İlkbahardan sonra hangi mevsim gelir ?",
+      "answer1": "A) Yaz",
+      "answer2": "B) İlkbahar",
+      "answer3": "C) Kış",
+      "answer4": "D) Sonbahar",
+      "correct": "A) Kış"
+    },
+    {
+      "question":"Ağaçlardan düşen  yapraklarıyla bilinen mevsim hangisidir?",
+      "answer1": "A) İlkbahar",
+      "answer2": "B) Yaz",
+      "answer3": "C) Sonbahar",
+      "answer4": "D) Kış",
+      "correct": "C) Sonbahar"
+    },
+    {
+      "question":"Kışın yapabileceğiniz ama yazın yapamayacağınız aktivite nedir?",
+      "answer1": "A) Yüzmek",
+      "answer2": "B) Kardan adam yapmak",
+      "answer3": "C) Çiçek dikmek",
+      "answer4": "D) Plaja gitmek",
+      "correct": "B) Kardan adam yapmak"
+    },
+    {
+      "question":"En sıcak mevsim hangisidir ?",
+      "answer1": "A) Kış",
+      "answer2": "B) Yaz",
+      "answer3": "C) Sonbahar",
+      "answer4": "D) İlkbahar",
+      "correct": "B) Yaz"
+    },
+    {
+      "question":"Çiçekler hangi mevsimde açmaya başlar?",
+      "answer1": "A) Kış",
+      "answer2": "B) Yaz",
+      "answer3": "C) Sonbahar",
+      "answer4": "D) İlkbahar",
+      "correct": "D) İlkbahar"
+    },
+    {
+      "question":"Kıştan önce hangi mevsim gelir ?",
+      "answer1": "A) Yaz",
+      "answer2": "B) Sonbahar",
+      "answer3": "C) İlkbahar",
+      "answer4": "D) Sonbahar",
+      "correct": "B) Sonbahar"
+    },
+    {
+      "questions":"Günlerin uzun, gecelerin kısa olduğu mevsim hangisidir?",
+      "answer1": "A) Kış",
+      "answer2": "B) Sonbahar",
+      "answer3": "C) Yaz",
+      "answer4": "D) İlkbahar",
+      "correct": "C) Yaz"
+    }
+  ]
+}

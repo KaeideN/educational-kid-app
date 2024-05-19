@@ -89,6 +89,25 @@
     <string name="second_infoABC">You will see four buttons with different pronunciations.Select the button that has the correct pronunciation.</string>
     <string name="get_feedback">Get Feedback</string>
     <string name="third_infoABC">If you are correct, you will earn points and move on to the next word. If not, do not worry! You can always try again.</string>
+    <string name="summer">SUMMER</string>
+    <string name="spring">SPRING</string>
+    <string name="fall">FALL</string>
+    <string name="winter">WINTER</string>
+    <string name="summer_Text">-Warmest season of the year \n-Longer days and higher temperatures.</string>
+    <string name="spring_Text">-Sunny days \n-Colorful flowers \n-Return of playful animals</string>
+    <string name="fall_Text">-Also known as autumn \n-Between summer and winter \n-Trees shed their leaves \n-It is a time of harvest</string>
+    <string name="winter_Text">-Coldest season  \n-Shorter days \n-Colder temperatures \n-Snowfall and snowman</string>
+    <string name="quiz_result">Quiz Result</string>
+    <string name="correct">Correct</string>
+    <string name="wrong">Wrong</string>
+    <string name="take_again">You have to take the test again.</string>
+    <string name="pretty_good">You are pretty good.</string>
+    <string name="try_more">You have to try little more.</string>
+    <string name="very_good">You are very good congratulations !</string>
+
+
+
+
 
 
 

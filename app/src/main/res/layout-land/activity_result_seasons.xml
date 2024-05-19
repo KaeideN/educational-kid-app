@@ -16,9 +16,10 @@
         android:elevation="0dp">
 
         <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/quizResult"
             android:layout_width="101dp"
             android:layout_height="match_parent"
-            app:title="Result"
+            app:title="@string/quiz_result"
             app:titleCentered="true" />
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -53,7 +54,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:text="Result Info"
+                    android:text="@string/your_score"
                     android:textColor="@color/black"
                     android:textSize="17sp"
                     android:textStyle="bold" />
@@ -99,7 +100,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
-                        android:text="Correct"
+                        android:text="@string/correct"
+                        android:id="@+id/correctText"
                         android:textColor="@color/black"
                         android:textSize="17sp"
                         android:textStyle="bold" />
@@ -140,7 +142,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
-                        android:text="Wrong"
+                        android:text="@string/wrong"
+                        android:id="@+id/wrongText"
                         android:textColor="@color/black"
                         android:textSize="17sp"
                         android:textStyle="bold" />
@@ -185,7 +188,7 @@
                     android:id="@+id/tryAgainSeasonsText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Try Again"
+                    android:text="@string/try_again_button"
                     android:textColor="@color/black"
                     android:textSize="17sp"
                     android:textStyle="bold" />
@@ -210,10 +213,10 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/resultTextView"
+                    android:id="@+id/returnHomepage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Return to Homepage"
+                    android:text="@string/home_button"
                     android:textColor="@color/black"
                     android:textSize="17sp"
                     android:textStyle="bold" />

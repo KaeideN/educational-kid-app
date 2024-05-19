@@ -42,6 +42,21 @@
     <string name="second_infoABC">Farklı telaffuzlara sahip dört buton göreceksin.Doğru telaffuza sahip butona tıkla.</string>
     <string name="get_feedback">Geri Bildirim Al</string>
     <string name="third_infoABC">Doğru cevap verirsen puan kazanıp bir sonraki kelimeye geçeceksin. Yanlışsa endişelenme! Her zaman tekrar deneyebilirsin.</string>
+    <string name="summer">YAZ</string>
+    <string name="spring">İLKBAHAR</string>
+    <string name="fall">SONBAHAR</string>
+    <string name="winter">KIŞ</string>
+    <string name="summer_Text">-Yılın en sıcak mevsimi \n-Daha uzun günler ve daha yüksek sıcaklıklar.</string>
+    <string name="spring_Text">-Güneşli günler \n-Renkli çiçekler \n-Sevimli hayvanların uyanışı</string>
+    <string name="fall_Text">-Yaz ve kış arasındaki mevsimdir. \n-Ağaçlar yapraklarını döker \n-Hasatın yapıldığı zamandır.</string>
+    <string name="winter_Text">-En soğuk mevsim \n-Daha kısa günler \n-Daha düşük sıcaklıklar \n-Kar yağışı ve kardan adam</string>
+    <string name="quiz_result">Quiz Sonucu</string>
+    <string name="correct">Doğru</string>
+    <string name="wrong">Yanlış</string>
+    <string name="take_again">Testi tekrar almalısın.</string>
+    <string name="try_more">Biraz daha denemelisin.</string>
+    <string name="pretty_good">Gayet iyisin.</string>
+    <string name="very_good">Çok iyisin tebrikler !</string>
 
 
 
