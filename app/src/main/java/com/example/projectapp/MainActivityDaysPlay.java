@@ -11,17 +11,20 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Arrays;
 import java.util.Collections;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class MainActivityDaysPlay extends AppCompatActivity implements View.OnClickListener {
 
     private int currentPosition = 0; // To keep track of the current position
 
-    // Store original positions
+    // Store original and shuffled positions
     private int[] originalX = new int[7];
     private int[] originalY = new int[7];
+    private int[] shuffledX = new int[7];
+    private int[] shuffledY = new int[7];
     private boolean[] isMoved = new boolean[7];
     private int[] currentDayPosition = new int[7]; // To track the current drop positions
 
@@ -57,48 +60,61 @@ public class MainActivityDaysPlay extends AppCompatActivity implements View.OnCl
         ImageView fridayImageView = findViewById(R.id.friday);
         ImageView saturdayImageView = findViewById(R.id.saturday);
 
-        // Create a list of the ImageView references
-        List<ImageView> daysList = new ArrayList<>();
-        daysList.add(sundayImageView);
-        daysList.add(mondayImageView);
-        daysList.add(tuesdayImageView);
-        daysList.add(wednesdayImageView);
-        daysList.add(thursdayImageView);
-        daysList.add(fridayImageView);
-        daysList.add(saturdayImageView);
+        // Array of the ImageView elements
+        ImageView[] dayImageViews = new ImageView[]{
+                sundayImageView, mondayImageView, tuesdayImageView,
+                wednesdayImageView, thursdayImageView, fridayImageView, saturdayImageView
+        };
 
-        // Shuffle the list to randomize the order
-        Collections.shuffle(daysList);
-
-        // Set OnClickListener for each ImageView and initialize original positions
-        for (int i = 0; i < daysList.size(); i++) {
-            ImageView dayImageView = daysList.get(i);
+        // Set OnClickListener for each ImageView
+        for (ImageView dayImageView : dayImageViews) {
             dayImageView.setOnClickListener(this);
-            int finalI = i;
-            dayImageView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-                @Override
-                public void onGlobalLayout() {
-                    // Remove the listener to avoid multiple calls
-                    dayImageView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                    // Initialize original positions
-                    originalX[finalI] = dayImageView.getLeft();
-                    originalY[finalI] = dayImageView.getTop();
-                }
-            });
         }
 
         // Timer TextView
         timerTextView = findViewById(R.id.timerTextView);
 
-        // Start the timer after the layout is drawn
-        findViewById(R.id.mainLayout).getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+        // Use ViewTreeObserver to get the initial positions after layout is drawn
+        ViewTreeObserver vto = sundayImageView.getViewTreeObserver();
+        vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                findViewById(R.id.mainLayout).getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                // Remove the listener to avoid multiple calls
+                sundayImageView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+
+                // Initialize original positions
+                for (int i = 0; i < dayImageViews.length; i++) {
+                    originalX[i] = dayImageViews[i].getLeft();
+                    originalY[i] = dayImageViews[i].getTop();
+                }
+
+                // Shuffle the initial positions and store them
+                shuffleInitialPositions(dayImageViews);
+
+                // Start the timer
                 startTime = System.currentTimeMillis();
                 timerHandler.postDelayed(timerRunnable, 0);
             }
         });
+    }
+
+    private void shuffleInitialPositions(ImageView[] dayImageViews) {
+        List<ImageView> imageViewList = Arrays.asList(dayImageViews);
+        Collections.shuffle(imageViewList);
+
+        for (int i = 0; i < imageViewList.size(); i++) {
+            ImageView dayImageView = imageViewList.get(i);
+            RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) dayImageView.getLayoutParams();
+            shuffledX[i] = originalX[Arrays.asList(dayImageViews).indexOf(dayImageView)];
+            shuffledY[i] = originalY[Arrays.asList(dayImageViews).indexOf(dayImageView)];
+            layoutParams.leftMargin = shuffledX[i];
+            layoutParams.topMargin = shuffledY[i];
+            dayImageView.setLayoutParams(layoutParams);
+        }
+
+        // Copy shuffled positions back to originalX and originalY arrays
+        System.arraycopy(shuffledX, 0, originalX, 0, shuffledX.length);
+        System.arraycopy(shuffledY, 0, originalY, 0, shuffledY.length);
     }
 
     @Override
@@ -124,8 +140,8 @@ public class MainActivityDaysPlay extends AppCompatActivity implements View.OnCl
 
         if (index != -1) {
             if (isMoved[index]) {
-                // Move back to original position
-                moveImageView(view, originalX[index], originalY[index]);
+                // Move back to shuffled position
+                moveImageView(view, shuffledX[index], shuffledY[index]);
                 isMoved[index] = false;
                 currentDayPosition[index] = -1; // Reset current position
                 adjustCurrentPosition(); // Adjust currentPosition after moving back
