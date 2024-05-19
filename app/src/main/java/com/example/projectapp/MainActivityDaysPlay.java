@@ -1,8 +1,10 @@
 package com.example.projectapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -32,6 +34,7 @@ public class MainActivityDaysPlay extends AppCompatActivity implements View.OnCl
     private long startTime = 0L;
     private Handler timerHandler = new Handler();
     private TextView timerTextView;
+    private Button backButton;
 
     private Runnable timerRunnable = new Runnable() {
         @Override
@@ -73,6 +76,13 @@ public class MainActivityDaysPlay extends AppCompatActivity implements View.OnCl
 
         // Timer TextView
         timerTextView = findViewById(R.id.timerTextView);
+
+        // Back Button
+        backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivityDaysPlay.this, MainActivityDays.class);
+            startActivity(intent);
+        });
 
         // Use ViewTreeObserver to get the initial positions after layout is drawn
         ViewTreeObserver vto = sundayImageView.getViewTreeObserver();
@@ -198,6 +208,9 @@ public class MainActivityDaysPlay extends AppCompatActivity implements View.OnCl
                 int seconds = totalSeconds % 60;
                 String message = String.format("Congratulations! You completed in %d:%02d", minutes, seconds);
                 Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+
+                // Show the back button when game is completed
+                backButton.setVisibility(View.VISIBLE);
             }
         }
     }
