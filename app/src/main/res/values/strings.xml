@@ -75,8 +75,23 @@
     <string name="tap_the_buttons">Tap the Buttons</string>
     <string name="second_info123">Buttons with numbers will appear below. Tap them in the same order as shown.</string>
     <string name="mistakes_happen">Oops! Mistakes Happen</string>
-    <string name="third_info123">If you tap the wrong button, it will flash red briefly. No worries, try again!</string>
+    <string name="third_info123">If you tap the wrong button, it will flash red briefly.No worries, try again!</string>
     <string name="your_score">Your Score</string>
+    <string name="home_button">Return to Homepage</string>
+    <string name="try_again_button">Try Again</string>
+    <string name="type_beginnig_to_end">Type the digits from beginning to end.</string>
+    <string name="type_end_to_beginnig">Type the digits from end to beginning.</string>
+    <string name="second_info321">Buttons with numbers will appear below. Tap them in the reverse order as shown.</string>
+    <string name="headerABC">Lets Play and Learn Pronunciation!</string>
+    <string name="explore_the_images">Explore the Images</string>
+    <string name="first_infoABC">You will see different images displayed on the screen.Each image represents a different word.</string>
+    <string name="right_pronunciation">Choose the Right Pronunciation</string>
+    <string name="second_infoABC">You will see four buttons with different pronunciations.Select the button that has the correct pronunciation.</string>
+    <string name="get_feedback">Get Feedback</string>
+    <string name="third_infoABC">If you are correct, you will earn points and move on to the next word. If not, do not worry! You can always try again.</string>
+
+
+
 
 
 

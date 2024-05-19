@@ -1,7 +1,9 @@
 package com.example.projectapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,7 +37,9 @@ public class MainActivityABCPlay extends AppCompatActivity {
     private int playerBest = 0;
     private int questionCount = 1;
     private int totalQuestions = 8; // Total number of questions
-    private SharedPreferences sharedPreferences;
+    private SharedPreferences sharedPreferences,sharedPreferencesLang;
+    private Context context;
+    private Resources resources;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,11 @@ public class MainActivityABCPlay extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         playerBest = sharedPreferences.getInt("bestScore", 0);
+
+        SharedPreferences sharedPreferencesLang = getSharedPreferences("Settings", MODE_PRIVATE);
+        String language = LocaleHelper.getLanguage(this);
+        context = LocaleHelper.setLocale(MainActivityABCPlay.this, language);
+        resources = context.getResources();
 
         imageQuestion = findViewById(R.id.imageQuestion);
         buttonOption1 = findViewById(R.id.buttonOption1);
@@ -56,7 +65,7 @@ public class MainActivityABCPlay extends AppCompatActivity {
         textViewBest = findViewById(R.id.textViewBest);
         textViewQuestionCount = findViewById(R.id.textViewQuestionCount);
 
-        textViewBest.setText("Best: " + playerBest);
+        textViewBest.setText(resources.getString(R.string.personal_best)+ " " + playerBest);
         updateQuestionCount();
 
 
@@ -191,13 +200,13 @@ private void displayNextImage() {
         }
 
         // Update the score text view
-        textViewScore.setText("Score: " + currentScore);
+        textViewScore.setText(resources.getString(R.string.current_score)+": " + currentScore);
 
         if (questionCount > totalQuestions) {
             // End of questions
             if (currentScore > playerBest) {
                 playerBest = currentScore;
-                textViewBest.setText("Best: " + playerBest);
+                textViewBest.setText(resources.getString(R.string.personal_best)+": " + playerBest);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putInt("bestScore", playerBest);
                 editor.apply();
@@ -211,6 +220,8 @@ private void displayNextImage() {
             buttonOption3.setVisibility(View.INVISIBLE);
             buttonOption4.setVisibility(View.INVISIBLE);
             // Make back button visible
+            buttonTryAgain.setText(resources.getString(R.string.try_again_button));
+            buttonHome.setText(resources.getString(R.string.home_button));
             buttonTryAgain.setVisibility(View.VISIBLE);
             buttonHome.setVisibility(View.VISIBLE);
             return;

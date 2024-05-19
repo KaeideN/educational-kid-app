@@ -1,6 +1,9 @@
 package com.example.projectapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -38,11 +41,19 @@ public class MainActivity123Play extends AppCompatActivity {
     private int level;
     private int highestScore;
     private int n; // Declare n as a class-level variable
+    Context context;
+    Resources resources;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_activity123_play);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("Settings", MODE_PRIVATE);
+        String language = LocaleHelper.getLanguage(this);
+        context = LocaleHelper.setLocale(MainActivity123Play.this, language);
+        resources = context.getResources();
+
 
         textView = findViewById(R.id.textView);
         gridLayout = findViewById(R.id.gridLayout);
@@ -83,7 +94,7 @@ public class MainActivity123Play extends AppCompatActivity {
                     shownNumbers.add(number); // Add the shown number to shownNumbers
                     showNumbers();
                 } else {
-                    textView.setText("Type the digits from beginning to end.");
+                    textView.setText(resources.getString(R.string.type_beginnig_to_end));
                 }
             }
         }, 1500);

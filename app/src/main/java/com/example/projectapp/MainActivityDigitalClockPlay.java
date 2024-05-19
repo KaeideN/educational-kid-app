@@ -71,7 +71,8 @@ public class MainActivityDigitalClockPlay extends AppCompatActivity {
         textViewBest = findViewById(R.id.textViewBest);
         textViewQuestionCount = findViewById(R.id.textViewQuestionCount);
 
-        textViewBest.setText(resources.getString(R.string.personal_best)+" " + playerBest);
+        textViewBest.setText(resources.getString(R.string.personal_best)+": " + playerBest);
+        textViewScore.setText(resources.getString(R.string.current_score)+": "+currentScore);
         updateQuestionCount();
 
         buttonOption1.setOnClickListener(new View.OnClickListener() {
@@ -246,6 +247,7 @@ public class MainActivityDigitalClockPlay extends AppCompatActivity {
             buttonOption2.setVisibility(View.INVISIBLE);
             buttonOption3.setVisibility(View.INVISIBLE);
             // Make back button visible
+            buttonBack.setText(resources.getString(R.string.back));
             buttonBack.setVisibility(View.VISIBLE);
             return;
         }

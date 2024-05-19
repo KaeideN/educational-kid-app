@@ -7,6 +7,28 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@drawable/background">
+    <RelativeLayout
+        android:id="@+id/showlangdialog"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/dialog_language"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="EN"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
 
     <!-- Boş alan (1/4 yükseklik) -->
     <View

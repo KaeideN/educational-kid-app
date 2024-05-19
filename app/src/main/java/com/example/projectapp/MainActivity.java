@@ -19,7 +19,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     Button button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12;
-    TextView dialog_langueage;
+    TextView dialog_language;
     RelativeLayout show_lan_dialog;
     Context context;
     Resources resources;
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         show_lan_dialog = findViewById(R.id.showlangdialog);
-        dialog_langueage = findViewById(R.id.dialog_language);
+        dialog_language = findViewById(R.id.dialog_language);
 
         show_lan_dialog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 String selectedLanguage = Language[i];
-                                dialog_langueage.setText(selectedLanguage);
-
+                                dialog_language.setText(selectedLanguage);
+                                
                                 // Save selected language
                                 LocaleHelper.saveLanguage(MainActivity.this, selectedLanguage.equals("EN") ? "en" : "tr");
 

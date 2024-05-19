@@ -16,7 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class ResultActivity321 extends AppCompatActivity {
 
     Button buttonHomePage , buttonTryAgain;
-    TextView personalScoreText;
+    TextView personalScoreText,personalScore;
     Context context;
     Resources resources;
 
@@ -36,13 +36,17 @@ public class ResultActivity321 extends AppCompatActivity {
 
         buttonHomePage = findViewById(R.id.homeButton123);
         buttonTryAgain = findViewById(R.id.tryAgain123);
-        personalScoreText = findViewById(R.id.yourScore);
-        personalScoreText.setText(resources.getString(R.string.your_score));
+        personalScoreText = findViewById(R.id.yourScore123);
+        personalScore = findViewById(R.id.yourScore);
 
+
+        personalScoreText.setText(resources.getString(R.string.your_score));
+        buttonTryAgain.setText(resources.getString(R.string.try_again_button));
+        buttonHomePage.setText(resources.getString(R.string.home_button));
         // Retrieve user's score from Intent extras
         Intent intent = getIntent();
         int userScore = intent.getIntExtra("userScore", 0);
-        personalScoreText.setText(String.valueOf(userScore));
+        personalScore.setText(String.valueOf(userScore));
 
         buttonHomePage.setOnClickListener(v -> {
             Intent homeIntent = new Intent(ResultActivity321.this, MainActivity.class);

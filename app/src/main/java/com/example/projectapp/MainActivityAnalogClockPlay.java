@@ -27,7 +27,7 @@ public class MainActivityAnalogClockPlay extends AppCompatActivity {
     private Context context;
     private Resources resources;
 
-    private SharedPreferences sharedPreferences;
+    private SharedPreferences sharedPreferences,sharedPreferencesLang;
     private static final String PREFS_NAME = "MyPrefs";
     private static final String PERSONAL_BEST_KEY = "personalBest";
     private static final String CURRENT_SCORE_KEY = "currentScore";
@@ -37,7 +37,7 @@ public class MainActivityAnalogClockPlay extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_analog_clock_play);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("Settings", MODE_PRIVATE);
+        SharedPreferences sharedPreferencesLang = getSharedPreferences("Settings", MODE_PRIVATE);
         String language = LocaleHelper.getLanguage(this);
         context = LocaleHelper.setLocale(MainActivityAnalogClockPlay.this, language);
         resources = context.getResources();
@@ -160,14 +160,14 @@ public class MainActivityAnalogClockPlay extends AppCompatActivity {
     // Method to update the score display
     private void updateScoreDisplay() {
         // Update personal best and current score TextViews
-        personalBestTextView.setText("Personal Best: " + personalBest);
-        currentScoreTextView.setText("Current Score: " + currentScore);
+        personalBestTextView.setText(resources.getString(R.string.personal_best)+": " + personalBest);
+        currentScoreTextView.setText(resources.getString(R.string.current_score)+": " + currentScore);
     }
 
     // Method to update the question count display
     private void updateQuestionCount() {
         // Update question count TextView
-        questionCountTextView.setText("Question: " + questionCount + " / 15");
+        questionCountTextView.setText(resources.getString(R.string.questions)+": " + questionCount + " / 15");
     }
 
     // Method to show end-game message
@@ -183,6 +183,8 @@ public class MainActivityAnalogClockPlay extends AppCompatActivity {
         // Show end-game message with current score and personal best
         String message = "Game Over!\nYour Score: " + currentScore + "\nPersonal Best: " + personalBest;
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+
+        backToAnalogClock.setText(resources.getString(R.string.back));
         submitButton.setVisibility(View.INVISIBLE);
         timeInputEditText.setVisibility(View.INVISIBLE);
         backToAnalogClock.setVisibility(View.VISIBLE);

@@ -1,9 +1,13 @@
 package com.example.projectapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +17,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivityABC extends AppCompatActivity {
     Button buttonPlay;
+    private Context context;
+    private Resources resources;
+    TextView header,textView2,textView3,textView4,textView5,textView7,textView9;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +31,31 @@ public class MainActivityABC extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        SharedPreferences sharedPreferences = getSharedPreferences("Settings", MODE_PRIVATE);
+        String language = LocaleHelper.getLanguage(this);
+        context = LocaleHelper.setLocale(MainActivityABC.this, language);
+        resources = context.getResources();
+
+        header = findViewById(R.id.header);
+        textView2 = findViewById(R.id.textView2);
+        textView3 = findViewById(R.id.textView3);
+        textView4 = findViewById(R.id.textView4);
+        textView5 = findViewById(R.id.textView5);
+        textView7 = findViewById(R.id.textView7);
+        textView9 = findViewById(R.id.textView9);
+
+        header.setText(resources.getString(R.string.headerABC));
+        textView2.setText(resources.getString(R.string.explore_the_images));
+        textView3.setText(resources.getString(R.string.first_infoABC));
+        textView4.setText(resources.getString(R.string.right_pronunciation));
+        textView5.setText(resources.getString(R.string.second_infoABC));
+        textView7.setText(resources.getString(R.string.get_feedback));
+        textView9.setText(resources.getString(R.string.third_infoABC));
+        
+
         buttonPlay = findViewById(R.id.buttonPlay);
+        buttonPlay.setText(resources.getString(R.string.play));
         buttonPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

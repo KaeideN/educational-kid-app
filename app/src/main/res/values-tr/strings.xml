@@ -30,17 +30,18 @@
     <string name="mistakes_happen">Oops! Hatalar Olabilir</string>
     <string name="third_info123">Yanlış düğmeye basarsan buton kısa süreliğine kırmızı renkte yanıp söner.Endişelenme, tekrar dene!</string>
     <string name="your_score">Skorun</string>
-
-
-
-
-
-
-
-
-
-
-
+    <string name="home_button">Anamenüye Dön</string>
+    <string name="try_again_button">Tekrar Dene</string>
+    <string name="type_beginnig_to_end">Rakamlara baştan sona doğru tıkla.</string>
+    <string name="type_end_to_beginnig">Rakamlara sondan başa doğru tıkla.</string>
+    <string name="second_info321">Üstünde sayı olan butonlara ters sırayla bas.</string>
+    <string name="headerABC">Oyna ve Telaffuz Öğren!</string>
+    <string name="explore_the_images">Resimleri İncele</string>
+    <string name="first_infoABC">Ekranda farklı resimler göreceksin.Her resim farklı bir kelimeyi simgeler.</string>
+    <string name="right_pronunciation">Doğru Telaffuzu Seç</string>
+    <string name="second_infoABC">Farklı telaffuzlara sahip dört buton göreceksin.Doğru telaffuza sahip butona tıkla.</string>
+    <string name="get_feedback">Geri Bildirim Al</string>
+    <string name="third_infoABC">Doğru cevap verirsen puan kazanıp bir sonraki kelimeye geçeceksin. Yanlışsa endişelenme! Her zaman tekrar deneyebilirsin.</string>
 
 
 
