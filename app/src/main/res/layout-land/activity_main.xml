@@ -43,122 +43,122 @@
 
     <ImageButton
         android:id="@+id/button1"
-        android:layout_width="0dp"
+        android:layout_width="600px"
         android:layout_height="0dp"
+        android:layout_marginLeft="200px"
         android:background="@drawable/analogbutton_en"
         app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <ImageButton
         android:id="@+id/button2"
-        android:layout_width="0dp"
+        android:layout_width="600px"
         android:layout_height="0dp"
+        android:layout_marginRight="200px"
         android:background="@drawable/digitalbutton_en"
         app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button1"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <ImageButton
         android:id="@+id/button3"
-        android:layout_width="0dp"
+        android:layout_width="600px"
         android:layout_height="0dp"
+        android:layout_marginLeft="200px"
         android:background="@drawable/daysbutton_en"
         app:layout_constraintBottom_toTopOf="@+id/button5"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
         app:layout_constraintTop_toBottomOf="@+id/button1"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/button4"
-        android:layout_width="0dp"
+        android:layout_width="600px"
         android:layout_height="0dp"
+        android:layout_marginRight="200px"
         android:background="@drawable/monthsbutton_en"
         app:layout_constraintBottom_toTopOf="@+id/button6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintStart_toEndOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <ImageButton
         android:id="@+id/button5"
-        android:layout_width="0dp"
+        android:layout_width="600px"
         android:layout_height="0dp"
+        android:layout_marginLeft="200px"
         android:background="@drawable/numbersfun_en"
         app:layout_constraintBottom_toTopOf="@+id/button7"
         app:layout_constraintTop_toBottomOf="@+id/button3"
-        app:layout_constraintEnd_toStartOf="@+id/button6"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/button6"
-        android:layout_width="0dp"
+        android:layout_width="600px"
         android:layout_height="0dp"
+        android:layout_marginRight="200px"
         android:background="@drawable/reverseit_en"
         app:layout_constraintBottom_toTopOf="@+id/button8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4"
-        app:layout_constraintStart_toEndOf="@+id/button5" />
+        app:layout_constraintTop_toBottomOf="@+id/button4"/>
 
     <ImageButton
         android:id="@+id/button7"
-        android:layout_width="0dp"
+        android:layout_width="600px"
         android:layout_height="0dp"
+        android:layout_marginLeft="200px"
         android:background="@drawable/pronounce_en"
         app:layout_constraintBottom_toTopOf="@+id/button9"
-        app:layout_constraintEnd_toStartOf="@+id/button8"
         app:layout_constraintTop_toBottomOf="@+id/button5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/button8"
-        android:layout_width="0dp"
+        android:layout_width="600px"
         android:layout_height="0dp"
+        android:layout_marginRight="200px"
         android:background="@drawable/directions_en"
         app:layout_constraintBottom_toTopOf="@+id/button10"
         app:layout_constraintTop_toBottomOf="@+id/button6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button7" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageButton
         android:id="@+id/button9"
-        android:layout_width="0dp"
+        android:layout_width="600px"
         android:layout_height="0dp"
+        android:layout_marginLeft="200px"
         android:background="@drawable/multiplefun_en"
         app:layout_constraintBottom_toTopOf="@+id/button11"
         app:layout_constraintTop_toBottomOf="@+id/button7"
-        app:layout_constraintEnd_toStartOf="@+id/button10"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/button10"
-        android:layout_width="0dp"
+        android:layout_width="600px"
         android:layout_height="0dp"
+        android:layout_marginRight="200px"
         android:background="@drawable/findtheimage_en"
         app:layout_constraintBottom_toTopOf="@+id/button12"
         app:layout_constraintTop_toBottomOf="@+id/button8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button9" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <ImageButton
         android:id="@+id/button11"
-        android:layout_width="0dp"
+        android:layout_width="600px"
         android:layout_height="0dp"
+        android:layout_marginLeft="200px"
         android:background="@drawable/tracktheball_en"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button9"
-        app:layout_constraintEnd_toStartOf="@+id/button12"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/button12"
-        android:layout_width="0dp"
+        android:layout_width="600px"
         android:layout_height="0dp"
+        android:layout_marginRight="200px"
         android:background="@drawable/seasons_en"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button11" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
