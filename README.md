@@ -7,13 +7,13 @@ User can access all games from the homescreen. Every game is in 2 buttons away. 
 
 ## Tutorials
 Every game has their own unique tutorials where the informations are given clearly.
-   ![image](https://github.com/user-attachments/assets/c2d58d91-6d71-4084-907c-82994b86fb13)    ![image](https://github.com/user-attachments/assets/98c53aed-060e-4eef-8eb6-d6e5967b5c3f)
+   ![image](https://github.com/user-attachments/assets/c2d58d91-6d71-4084-907c-82994b86fb13)![image](https://github.com/user-attachments/assets/98c53aed-060e-4eef-8eb6-d6e5967b5c3f)
 
 
 
 ## Games/ Quizzes
 Some topics have interactive games while some other topics have multiple choice type quizzes.
-![image](https://github.com/user-attachments/assets/31c814d9-f37c-48da-b8f0-6cd46e445bdf)  ![image](https://github.com/user-attachments/assets/68f827b1-c12e-412d-8921-db6b6827e989)
+![image](https://github.com/user-attachments/assets/31c814d9-f37c-48da-b8f0-6cd46e445bdf)![image](https://github.com/user-attachments/assets/68f827b1-c12e-412d-8921-db6b6827e989)
 
 
 
