@@ -2,7 +2,7 @@
 This is a mobile application for kids to be able to learn while playing interactive games/quizzes. Every game has tutorial and quiz part. User should register using their emails, then they can choose whicever topic they want to learn. Firebase is used for storing user's login informations (email and password).
 ## Homescreen
 User can access all games from the homescreen. Every game is in 2 buttons away. User can change the language from top left.
-   ![image](https://github.com/user-attachments/assets/38d6f4a2-9177-44be-9f1f-31006d218bb0)![image](https://github.com/user-attachments/assets/4b6d2913-62da-48ec-880f-d574ede4d41d)
+![image](https://github.com/user-attachments/assets/38d6f4a2-9177-44be-9f1f-31006d218bb0)![image](https://github.com/user-attachments/assets/4b6d2913-62da-48ec-880f-d574ede4d41d)
 
 
 ## Tutorials
